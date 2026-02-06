@@ -1,7 +1,19 @@
-
 # Serena Memory (runtime orchestrator state)
 .serena/memories/*
-!.serena/memories/.gitkeep
+!.s# Serena Memory runtime files
+.serena/
 
 # oh-my-ag cloned repository (temporary)
 oh-my-ag/
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local

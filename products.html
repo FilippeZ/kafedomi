@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Our Products - Kafedomi" data-gr="Τα Προϊόντα μας - Kafedomi">Our Products - Kafedomi</title>
+    <meta name="description"
+        content="Explore our complete range of premium vending solutions including coffee machines, snack vendors, drink coolers, and combo units.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for products page */
+        .products-hero {
+            background: linear-gradient(135deg, #1A1A1B 0%, #2C2C2C 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .products-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .products-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: white;
+            border: 2px solid #E9ECEF;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #2C2C2C;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #8B0000;
+            color: #8B0000;
+        }
+
+        .filter-btn.active {
+            background-color: #8B0000;
+            border-color: #8B0000;
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-item__image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: #1A1A1B;
+        }
+
+        .product-item__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-item:hover .product-item__image img {
+            transform: scale(1.1);
+        }
+
+        .product-item__content {
+            padding: 1.5rem;
+        }
+
+        .product-item__category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: #8B0000;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-item__title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1A1A1B;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-item__desc {
+            color: #495057;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-item__cta {
+            display: inline-flex;
+            align-items: center;
+            color: #8B0000;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .product-item__cta svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover .product-item__cta svg {
+            transform: translateX(5px);
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="logo-text">KAFEDOMI</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html#solutions" class="nav__link" data-en="Solutions"
+                            data-gr="Λύσεις">Solutions</a></li>
+                    <li><a href="index.html#sectors" class="nav__link" data-en="Sectors" data-gr="Τομείς">Sectors</a>
+                    </li>
+                    <li><a href="products.html" class="nav__link" data-en="Products" data-gr="Προϊόντα">Products</a>
+                    </li>
+                    <li><a href="index.html#about" class="nav__link" data-en="About Us" data-gr="Σχετικά">About Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__actions">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="gr">GR</button>
+                </div>
+                <a href="index.html#cta" class="btn btn-primary" data-en="Request a Quote"
+                    data-gr="Ζητήστε Προσφορά">Request a Quote</a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="products-hero">
+        <div class="container">
+            <h1 data-en="Our Vending Solutions" data-gr="Οι Λύσεις Vending μας">Our Vending Solutions</h1>
+            <p data-en="Premium automated retail solutions for every business need"
+                data-gr="Premium λύσεις αυτόματης λιανικής για κάθε επιχειρηματική ανάγκη">Premium automated retail
+                solutions for every business need</p>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="container">
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all" data-en="All Products" data-gr="Όλα τα Προϊόντα">All
+                Products</button>
+            <button class="filter-btn" data-category="coffee" data-en="Coffee Machines" data-gr="Μηχανές Καφέ">Coffee
+                Machines</button>
+            <button class="filter-btn" data-category="snacks" data-en="Snack Vending" data-gr="Vending Σνακ">Snack
+                Vending</button>
+            <button class="filter-btn" data-category="drinks" data-en="Drink Coolers" data-gr="Ψυγεία Ποτών">Drink
+                Coolers</button>
+            <button class="filter-btn" data-category="combo" data-en="Combo Units" data-gr="Combo Μονάδες">Combo
+                Units</button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="container">
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+        <div class="no-products" id="no-products" style="display: none;">
+            <h3 data-en="No products found" data-gr="Δεν βρέθηκαν προϊόντα">No products found</h3>
+            <p data-en="Try selecting a different category" data-gr="Δοκιμάστε να επιλέξετε διαφορετική κατηγορία">Try
+                selecting a different category</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title" data-en="Need help choosing?" data-gr="Χρειάζεστε βοήθεια στην επιλογή;">Need
+                    help choosing?</h2>
+                <p class="cta__subtitle"
+                    data-en="Our experts are here to help you find the perfect vending solution for your business."
+                    data-gr="Οι ειδικοί μας είναι εδώ για να σας βοηθήσουμε να βρείτε την τέλεια λύση vending για την επιχείρησή σας.">
+                    Our experts are here to help you find the perfect vending solution for your business.</p>
+                <a href="index.html#cta" class="btn btn-large btn-hero" data-en="Contact Us"
+                    data-gr="Επικοινωνήστε μαζί μας">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">KAFEDOMI</div>
+                    <p class="footer__tagline" data-en="The architecture of the perfect break"
+                        data-gr="Η αρχιτεκτονική του τέλειου διαλείμματος">The architecture of the perfect break</p>
+                </div>
+
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 data-en="Solutions" data-gr="Λύσεις">Solutions</h4>
+                        <ul>
+                            <li><a href="index.html#sectors" data-en="Hotels" data-gr="Ξενοδοχεία">Hotels</a></li>
+                            <li><a href="index.html#sectors" data-en="Factories" data-gr="Εργοστάσια">Factories</a></li>
+                            <li><a href="index.html#sectors" data-en="Companies" data-gr="Εταιρείες">Companies</a></li>
+                            <li><a href="index.html#sectors" data-en="Hospitals" data-gr="Νοσοκομεία">Hospitals</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 data-en="Products" data-gr="Προϊόντα">Products</h4>
+                        <ul>
+                            <li><a href="products.html?category=coffee" data-en="Coffee Machines"
+                                    data-gr="Μηχανές Καφέ">Coffee Machines</a></li>
+                            <li><a href="products.html?category=snacks" data-en="Snack Vending"
+                                    data-gr="Vending Σνακ">Snack Vending</a></li>
+                            <li><a href="products.html?category=drinks" data-en="Drink Coolers"
+                                    data-gr="Ψυγεία Ποτών">Drink Coolers</a></li>
+                            <li><a href="products.html?category=combo" data-en="Combo Units"
+                                    data-gr="Combo Μονάδες">Combo Units</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 data-en="Company" data-gr="Εταιρεία">Company</h4>
+                        <ul>
+                            <li><a href="index.html#about" data-en="About Us" data-gr="Σχετικά με εμάς">About Us</a>
+                            </li>
+                            <li><a href="index.html#cta" data-en="Contact" data-gr="Επικοινωνία">Contact</a></li>
+                            <li><a href="#" data-en="Careers" data-gr="Καριέρα">Careers</a></li>
+                            <li><a href="#" data-en="Support" data-gr="Υποστήριξη">Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <p><strong data-en="Contact" data-gr="Επικοινωνία">Contact</strong></p>
+                        <p data-en="Phone: +30 22310 12345" data-gr="Τηλέφωνο: +30 22310 12345">Phone: +30 22310 12345
+                        </p>
+                        <p data-en="Email: info@kafedomi.gr" data-gr="Email: info@kafedomi.gr">Email: info@kafedomi.gr
+                        </p>
+                        <p data-en="Location: Lamia, Fthiotida" data-gr="Τοποθεσία: Λαμία, Φθιώτιδα">Location: Lamia,
+                            Fthiotida</p>
+                        <p data-en="Serving all of Fthiotida region" data-gr="Εξυπηρετούμε όλο το νομό Φθιώτιδας">
+                            Serving all of Fthiotida region</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p data-en="© 2026 Kafedomi. All rights reserved. | Lamia, Fthiotida, Greece"
+                    data-gr="© 2026 Kafedomi. Με επιφύλαξη παντός δικαιώματος. | Λαμία, Φθιώτιδα, Ελλάδα">© 2026
+                    Kafedomi. All rights reserved. | Lamia, Fthiotida, Greece</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script src="products-page.js"></script>
+</body>
+
+</html>

@@ -8,7 +8,7 @@ class LanguageManager {
     init() {
         // Get language buttons
         this.langButtons = document.querySelectorAll('.lang-btn');
-        
+
         // Add event listeners
         this.langButtons.forEach(btn => {
             btn.addEventListener('click', () => this.switchLanguage(btn.dataset.lang));
@@ -20,9 +20,9 @@ class LanguageManager {
 
     switchLanguage(lang) {
         if (lang === this.currentLang) return;
-        
+
         this.currentLang = lang;
-        
+
         // Update active button
         this.langButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -35,12 +35,12 @@ class LanguageManager {
     updateContent() {
         // Update all elements with data-en and data-gr attributes
         const elements = document.querySelectorAll('[data-en][data-gr]');
-        
+
         elements.forEach(element => {
-            const content = this.currentLang === 'en' 
-                ? element.dataset.en 
+            const content = this.currentLang === 'en'
+                ? element.dataset.en
                 : element.dataset.gr;
-            
+
             // Update text content or placeholder
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = content;
@@ -68,7 +68,7 @@ class HeaderManager {
 
     handleScroll() {
         const scrolled = window.scrollY > this.scrollThreshold;
-        
+
         if (scrolled) {
             this.header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
         } else {
@@ -88,20 +88,20 @@ class SmoothScroll {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 const href = anchor.getAttribute('href');
-                
+
                 // Skip empty anchors
                 if (href === '#') {
                     e.preventDefault();
                     return;
                 }
-                
+
                 const target = document.querySelector(href);
-                
+
                 if (target) {
                     e.preventDefault();
                     const headerHeight = document.getElementById('header').offsetHeight;
                     const targetPosition = target.offsetTop - headerHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -116,62 +116,108 @@ class SmoothScroll {
 class FormManager {
     constructor() {
         this.form = document.getElementById('contact-form');
+        this.submitButton = null;
         this.init();
     }
 
     init() {
         if (!this.form) return;
-        
+
+        this.submitButton = this.form.querySelector('button[type="submit"]');
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-        
+
+        // Get current language
+        const lang = window.languageManager?.currentLang || 'en';
+
         // Get form data
         const formData = {
             name: document.getElementById('name').value,
             company: document.getElementById('company').value,
             sector: document.getElementById('sector').value,
             email: document.getElementById('email').value,
-            message: document.getElementById('message').value
+            phone: document.getElementById('phone')?.value || '',
+            message: document.getElementById('message').value,
+            language: lang
         };
 
         // Validate
-        if (!this.validateForm(formData)) {
+        if (!this.validateForm(formData, lang)) {
             return;
         }
 
-        // Show success message (in production, this would send to a server)
-        this.showSuccessMessage();
-        
-        // Reset form
-        this.form.reset();
+        // Disable submit button
+        if (this.submitButton) {
+            this.submitButton.disabled = true;
+            this.submitButton.textContent = lang === 'en' ? 'Sending...' : 'Αποστολή...';
+        }
+
+        try {
+            // Send to backend API
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                this.showSuccessMessage(data.message || (lang === 'en'
+                    ? 'Thank you! We will contact you soon.'
+                    : 'Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα μαζί σας.'));
+                this.form.reset();
+            } else {
+                this.showErrorMessage(data.message || (lang === 'en'
+                    ? 'An error occurred. Please try again.'
+                    : 'Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.'));
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            this.showErrorMessage(lang === 'en'
+                ? 'Unable to send message. Please check your connection and try again.'
+                : 'Αδυναμία αποστολής μηνύματος. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.');
+        } finally {
+            // Re-enable submit button
+            if (this.submitButton) {
+                this.submitButton.disabled = false;
+                const lang = window.languageManager?.currentLang || 'en';
+                this.submitButton.textContent = lang === 'en' ? 'Request Quote' : 'Ζητήστε Προσφορά';
+            }
+        }
     }
 
-    validateForm(data) {
+    validateForm(data, lang) {
         // Basic validation
         if (!data.name || !data.company || !data.sector || !data.email) {
-            alert('Please fill in all required fields.');
+            alert(lang === 'en'
+                ? 'Please fill in all required fields.'
+                : 'Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.');
             return false;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(data.email)) {
-            alert('Please enter a valid email address.');
+            alert(lang === 'en'
+                ? 'Please enter a valid email address.'
+                : 'Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email.');
             return false;
         }
 
         return true;
     }
 
-    showSuccessMessage() {
-        const lang = window.languageManager?.currentLang || 'en';
-        const message = lang === 'en' 
-            ? 'Thank you! We will contact you soon.' 
-            : 'Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα μαζί σας.';
-        
+    showSuccessMessage(message) {
+        alert(message);
+    }
+
+    showErrorMessage(message) {
         alert(message);
     }
 }
@@ -199,7 +245,7 @@ class AnimationObserver {
 
         // Observe elements
         const animatedElements = document.querySelectorAll('.sector-card, .product-card, .advantage__feature');
-        
+
         animatedElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -220,9 +266,9 @@ class MobileMenu {
 
     init() {
         if (!this.toggle || !this.menu) return;
-        
+
         this.toggle.addEventListener('click', () => this.toggleMenu());
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (this.isOpen && !this.toggle.contains(e.target) && !this.menu.contains(e.target)) {
@@ -238,7 +284,7 @@ class MobileMenu {
 
     toggleMenu() {
         this.isOpen = !this.isOpen;
-        
+
         if (this.isOpen) {
             this.openMenu();
         } else {
@@ -255,11 +301,11 @@ class MobileMenu {
         this.menu.style.backgroundColor = 'white';
         this.menu.style.padding = '1rem';
         this.menu.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-        
+
         this.menu.querySelector('.nav__list').style.display = 'flex';
         this.menu.querySelector('.nav__list').style.flexDirection = 'column';
         this.menu.querySelector('.nav__list').style.gap = '1rem';
-        
+
         // Animate toggle button
         const spans = this.toggle.querySelectorAll('span');
         spans[0].style.transform = 'rotate(45deg) translateY(7px)';
@@ -270,7 +316,7 @@ class MobileMenu {
     closeMenu() {
         this.isOpen = false;
         this.menu.style.display = 'none';
-        
+
         // Reset toggle button
         const spans = this.toggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
@@ -288,7 +334,7 @@ class CTAButtonManager {
     init() {
         // Get all CTA buttons
         const ctaButtons = document.querySelectorAll('.btn-primary, .btn-hero');
-        
+
         ctaButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 // Only handle if it's not a form submit button
@@ -298,7 +344,7 @@ class CTAButtonManager {
                     if (ctaSection) {
                         const headerHeight = document.getElementById('header').offsetHeight;
                         const targetPosition = ctaSection.offsetTop - headerHeight;
-                        
+
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
@@ -319,11 +365,11 @@ class ParallaxEffect {
 
     init() {
         if (!this.hero) return;
-        
+
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
             const parallaxSpeed = 0.5;
-            
+
             if (scrolled < window.innerHeight) {
                 this.hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
             }
