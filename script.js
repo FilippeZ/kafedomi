@@ -2,50 +2,63 @@
 class HeroSlideshow {
     constructor() {
         this.container = document.getElementById('hero-slideshow');
+        if (!this.container) {
+            console.log('Hero slideshow container not found');
+            return;
+        }
         this.images = [];
         this.currentIndex = 0;
-        this.totalImages = 80; // 000 to 079
+        this.totalImages = 80;
         this.interval = null;
         this.init();
     }
 
     init() {
-        // Create and preload all images
         for (let i = 0; i < this.totalImages; i++) {
             const img = document.createElement('img');
             const num = String(i).padStart(3, '0');
             img.src = `new_pictures/A_smooth_cinematic_202602061459_9wj0b_${num}.jpg`;
             img.alt = 'Kafedomi Vending Machine';
-
             if (i === 0) {
                 img.classList.add('active');
             }
-
             this.container.appendChild(img);
             this.images.push(img);
         }
-
-        // Start slideshow after first image loads
-        this.images[0].addEventListener('load', () => {
-            this.startSlideshow();
-        });
+        this.startSlideshow();
     }
 
     startSlideshow() {
-        // Change image every 100ms for smooth animation (80 images = 8 seconds total)
+        let loadedCount = 0;
+        this.images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+            } else {
+                img.onload = () => {
+                    loadedCount++;
+                    if (loadedCount === this.totalImages) {
+                        this.playAnimation();
+                    }
+                };
+            }
+        });
+        if (loadedCount === this.totalImages) {
+            this.playAnimation();
+        } else {
+            setTimeout(() => this.playAnimation(), 500);
+        }
+    }
+
+    playAnimation() {
+        // 42ms = ~24fps like a movie
         this.interval = setInterval(() => {
             this.nextSlide();
-        }, 100);
+        }, 42);
     }
 
     nextSlide() {
-        // Remove active class from current image
         this.images[this.currentIndex].classList.remove('active');
-
-        // Move to next image
         this.currentIndex = (this.currentIndex + 1) % this.totalImages;
-
-        // Add active class to new image
         this.images[this.currentIndex].classList.add('active');
     }
 
@@ -58,7 +71,7 @@ class HeroSlideshow {
 
 // Initialize slideshow when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const heroSlideshow = new HeroSlideshow();
+    new HeroSlideshow();
 });
 
 // ===== LANGUAGE SWITCHING =====
