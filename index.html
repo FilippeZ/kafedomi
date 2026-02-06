@@ -29,7 +29,7 @@
                         <div class="dropdown-menu">
                             <a href="products.html?category=snacks" data-en="Snacks" data-gr="Σνακ">Snacks</a>
                             <a href="products.html?category=drinks" data-en="Drinks" data-gr="Ποτά">Drinks</a>
-                            <a href="products.html?category=food" data-en="Food" data-gr="Φαγητό">Food</a>
+                            <a href="products.html?category=combo" data-en="Food" data-gr="Φαγητό">Food</a>
                         </div>
                     </li>
                     <li class="nav__item has-dropdown">
@@ -73,7 +73,9 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero__bg">
-            <div class="hero__slideshow" id="hero-slideshow"></div>
+            <div class="hero__slideshow" id="hero-slideshow">
+                <canvas id="hero-canvas"></canvas>
+            </div>
             <div class="hero__overlay"></div>
         </div>
         <div class="hero__content container">
@@ -106,7 +108,7 @@
             </div>
 
             <div class="sectors__grid">
-                <div class="sector-card">
+                <div class="sector-card reveal">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -120,7 +122,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card">
+                <div class="sector-card reveal">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -134,7 +136,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card">
+                <div class="sector-card reveal">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path
@@ -151,7 +153,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card">
+                <div class="sector-card reveal">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -179,63 +181,118 @@
             </div>
 
             <div class="products__grid">
-                <div class="product-card">
+                <!-- Vending Column -->
+                <div class="product-card reveal">
                     <div class="product-card__image">
-                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_025.jpg" alt="Premium Coffee">
+                        <img src="images/vending_office.png" alt="Smart Vending Solutions">
                     </div>
                     <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Premium Coffee" data-gr="Premium Καφές">Premium Coffee
+                        <h3 class="product-card__title" data-en="Vending Solutions" data-gr="Λύσεις Vending">Vending
+                            Solutions</h3>
+                        <p class="product-card__desc"
+                            data-en="Interactive touch-screen machines offering a wide range of fresh snacks, cold drinks, and healthy food options for the modern workplace."
+                            data-gr="Διαδραστικές μηχανές με οθόνη αφής που προσφέρουν μεγάλη γκάμα φρέσκων σνακ, κρύων ποτών και υγιεινών επιλογών φαγητού για τον σύγχρονο χώρο εργασίας.">
+                            Interactive touch-screen machines offering a wide range of fresh snacks, cold drinks, and
+                            healthy food options for the modern workplace.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Cashless & Mobile payments" data-gr="Ανέπαφες & Mobile πληρωμές">Cashless &
+                                Mobile payments</li>
+                            <li data-en="Smart inventory tracking" data-gr="Έξυπνη παρακολούθηση αποθέματος">Smart
+                                inventory tracking</li>
+                            <li data-en="Energy efficient (Grade A++)" data-gr="Ενεργειακά αποδοτικό (A++)">Energy
+                                efficient (Grade A++)</li>
+                        </ul>
+                        <div class="product-card__footer">
+                            <a href="products.html?category=snacks" class="btn btn-secondary" data-en="Explore Vending"
+                                data-gr="Εξερευνήστε το Vending">Explore Vending</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Column -->
+                <div class="product-card reveal">
+                    <div class="product-card__image">
+                        <img src="images/office_coffee.png" alt="Premium Coffee Systems">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Coffee & Hot Drinks" data-gr="Καφές & Ζεστά Ροφήματα">
+                            Coffee & Hot Drinks</h3>
+                        <p class="product-card__desc"
+                            data-en="Authentic Italian espresso and gourmet hot drinks with bean-to-cup technology designed for corporate excellence."
+                            data-gr="Αυθεντικός ιταλικός espresso και gourmet ζεστά ροφήματα με τεχνολογία bean-to-cup σχεδιασμένη για εταιρική αριστεία.">
+                            Authentic Italian espresso and gourmet hot drinks with bean-to-cup technology designed for
+                            corporate excellence.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Fresh roasted beans" data-gr="Φρεσκοκαβουρδισμένοι κόκκοι">Fresh roasted beans
+                            </li>
+                            <li data-en="Professional milk frothing" data-gr="Επαγγελματικό αφρόγαλα">Professional milk
+                                frothing</li>
+                            <li data-en="Italian espresso technology" data-gr="Ιταλική τεχνολογία espresso">Italian
+                                espresso technology</li>
+                        </ul>
+                        <div class="product-card__footer">
+                            <a href="products.html?category=coffee" class="btn btn-secondary" data-en="Explore Coffee"
+                                data-gr="Εξερευνήστε τον Καφέ">Explore Coffee</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Water Column -->
+                <div class="product-card reveal">
+                    <div class="product-card__image">
+                        <img src="images/water_system.png" alt="Pure Water Solutions">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Water Solutions" data-gr="Λύσεις Νερού">Water Solutions
                         </h3>
                         <p class="product-card__desc"
-                            data-en="Bean-to-cup technology for the perfect espresso, cappuccino, or latte every time."
-                            data-gr="Τεχνολογία bean-to-cup για τον τέλειο espresso, cappuccino ή latte κάθε φορά.">
-                            Bean-to-cup technology for the perfect espresso, cappuccino, or latte every time.
+                            data-en="High-performance filtration systems providing chilled, sparkling, and alkaline water for demanding corporate environments."
+                            data-gr="Συστήματα φιλτραρίσματος υψηλής απόδοσης που παρέχουν κρύο, ανθρακούχο και αλκαλικό νερό για απαιτητικά εταιρικά περιβάλλοντα.">
+                            High-performance filtration systems providing chilled, sparkling, and alkaline water for
+                            demanding corporate environments.
                         </p>
                         <ul class="product-card__features">
-                            <li data-en="Freshly ground beans" data-gr="Φρεσκοαλεσμένοι κόκκοι">Freshly ground beans
+                            <li data-en="Contactless dispensing" data-gr="Ανέπαφη παροχή">Contactless dispensing</li>
+                            <li data-en="Advanced UV-C sterilization" data-gr="Προηγμένη αποστείρωση UV-C">Advanced UV-C
+                                sterilization</li>
+                            <li data-en="Sustainable & eco-friendly" data-gr="Βιώσιμο & οικολογικό">Sustainable &
+                                eco-friendly</li>
+                        </ul>
+                        <div class="product-card__footer">
+                            <a href="products.html?category=water" class="btn btn-secondary" data-en="Explore Water"
+                                data-gr="Εξερευνήστε το Νερό">Explore Water</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services/Sectors Section -->
+                <div class="product-card reveal">
+                    <div class="product-card__image">
+                        <img src="images/service_team.png" alt="Technical Support & Service">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Full Service" data-gr="Πλήρης Υποστήριξη">Full Service
+                        </h3>
+                        <p class="product-card__desc"
+                            data-en="Comprehensive maintenance and rapid technical support to ensure your machines are always operational."
+                            data-gr="Ολοκληρωμένη συντήρηση και ταχεία τεχνική υποστήριξη για να διασφαλιστεί ότι οι μηχανές σας λειτουργούν πάντα.">
+                            Comprehensive maintenance and rapid technical support to ensure your machines are always
+                            operational.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Technical Support 24/7" data-gr="Τεχνική Υποστήριξη 24/7">Technical Support
+                                24/7</li>
+                            <li data-en="Predictive maintenance" data-gr="Προληπτική συντήρηση">Predictive maintenance
                             </li>
-                            <li data-en="Customizable strength" data-gr="Προσαρμόσιμη ένταση">Customizable strength</li>
-                            <li data-en="Multiple varieties" data-gr="Πολλαπλές ποικιλίες">Multiple varieties</li>
+                            <li data-en="Certified technicians" data-gr="Πιστοποιημένοι τεχνικοί">Certified technicians
+                            </li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_055.jpg" alt="Smart Snacks">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Smart Snacks" data-gr="Έξυπνα Σνακ">Smart Snacks</h3>
-                        <p class="product-card__desc"
-                            data-en="Fresh croissants, premium chips, and healthy options delivered daily."
-                            data-gr="Φρέσκα κρουασάν, premium chips και υγιεινές επιλογές καθημερινά.">
-                            Fresh croissants, premium chips, and healthy options delivered daily.
-                        </p>
-                        <ul class="product-card__features">
-                            <li data-en="Fresh daily delivery" data-gr="Φρέσκια καθημερινή παράδοση">Fresh daily
-                                delivery</li>
-                            <li data-en="Healthy alternatives" data-gr="Υγιεινές εναλλακτικές">Healthy alternatives</li>
-                            <li data-en="Top-tier brands" data-gr="Κορυφαίες μάρκες">Top-tier brands</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_048.jpg" alt="Chilled Drinks">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Chilled Drinks" data-gr="Κρύα Ποτά">Chilled Drinks</h3>
-                        <p class="product-card__desc"
-                            data-en="Ice-cold Coca-Cola, energy drinks, juices, and water at the perfect temperature."
-                            data-gr="Παγωμένη Coca-Cola, ενεργειακά ποτά, χυμοί και νερό στην τέλεια θερμοκρασία.">
-                            Ice-cold Coca-Cola, energy drinks, juices, and water at the perfect temperature.
-                        </p>
-                        <ul class="product-card__features">
-                            <li data-en="Optimal cooling" data-gr="Βέλτιστη ψύξη">Optimal cooling</li>
-                            <li data-en="Wide selection" data-gr="Μεγάλη ποικιλία">Wide selection</li>
-                            <li data-en="Energy & hydration" data-gr="Ενέργεια & ενυδάτωση">Energy & hydration</li>
-                        </ul>
+                        <div class="product-card__footer">
+                            <a href="#sectors" class="btn btn-secondary" data-en="Our Services"
+                                data-gr="Οι Υπηρεσίες μας">Our Services</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,7 +313,7 @@
                     </p>
 
                     <div class="advantage__features">
-                        <div class="advantage__feature">
+                        <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
@@ -273,7 +330,7 @@
                             </div>
                         </div>
 
-                        <div class="advantage__feature">
+                        <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
@@ -289,7 +346,7 @@
                             </div>
                         </div>
 
-                        <div class="advantage__feature">
+                        <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"></circle>
@@ -396,6 +453,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <a href="#header" class="back-to-top" id="back-to-top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">

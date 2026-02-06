@@ -68,12 +68,13 @@ app.post('/api/contact', async (req, res) => {
             !process.env.SMTP_PASS.includes('your-app');
 
         if (smtpConfigured) {
+            // Try to send emails
             try {
                 await sendContactFormEmails(formData, language || 'en');
                 console.log('✅ Email sent successfully');
             } catch (emailError) {
-                console.log('⚠️ Email failed, but form submission saved:', emailError.message);
-                // Don't fail the request, just log it
+                console.error('⚠️ Email sending failed:', emailError.message);
+                // We still return success to the user as the data was logged
             }
         } else {
             console.log('📧 Email skipped (SMTP not configured) - Data logged above');

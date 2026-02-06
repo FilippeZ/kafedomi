@@ -121,6 +121,145 @@ const products = [
             'images/bandicam 2026-02-06 15-11-11-429.jpg'
         ]
     },
+    // NEW PRODUCTS
+    {
+        id: 'water-dispenser-pro',
+        category: 'water',
+        name: {
+            en: 'PureFlow Office Water Dispenser',
+            gr: 'PureFlow Επαγγελματικός Ψύκτης Νερού'
+        },
+        description: {
+            en: 'Advanced water purification system delivering hot, cold, and sparkling water. Features UV sanitization and touchless operation for maximum hygiene.',
+            gr: 'Προηγμένο σύστημα καθαρισμού νερού που παρέχει ζεστό, κρύο και ανθρακούχο νερό. Διαθέτει αποστείρωση UV και ανέπαφη λειτουργία για μέγιστη υγιεινή.'
+        },
+        features: {
+            en: ['Hot, Cold & Sparkling options', 'UV-C Sanitization', 'Touch-free dispensing', 'Leak detection system', 'Energy saving mode', 'Compact design'],
+            gr: ['Επιλογές Ζεστού, Κρύου & Ανθρακούχου', 'Αποστείρωση UV-C', 'Ανέπαφη διανομή', 'Σύστημα ανίχνευσης διαρροών', 'Λειτουργία εξοικονόμησης ενέργειας', 'Συμπαγής σχεδιασμός']
+        },
+        specifications: {
+            capacity: 'Unlimited (Mains fed)',
+            dimensions: '35cm x 40cm x 110cm',
+            power: '0.5kW',
+            temperature: '4°C - 95°C'
+        },
+        images: ['images/water_system.png', 'images/bandicam 2026-02-06 15-11-14-588.jpg']
+    },
+    {
+        id: 'water-countertop',
+        category: 'water',
+        name: {
+            en: 'AquaCompact Tabletop',
+            gr: 'AquaCompact Επιτραπέζιος Μικρός'
+        },
+        description: {
+            en: 'Space-saving countertop water solution for smaller breakrooms. Delivers filtered chilled and ambient water instantly.',
+            gr: 'Λύση νερού πάγκου που εξοικονομεί χώρο για μικρότερα διαλείμματα. Παρέχει φιλτραρισμένο κρύο και νερό δωματίου άμεσα.'
+        },
+        features: {
+            en: ['Space-saving design', 'Advanced filtration', 'Simple push-button operation', 'Easy filter change', 'Low power consumption'],
+            gr: ['Σχεδιασμός εξοικονόμησης χώρου', 'Προηγμένο φιλτράρισμα', 'Απλή λειτουργία με κουμπί', 'Εύκολη αλλαγή φίλτρου', 'Χαμηλή κατανάλωση ενέργειας']
+        },
+        specifications: {
+            capacity: 'Mains fed',
+            dimensions: '30cm x 35cm x 45cm',
+            power: '0.3kW',
+            temperature: '5°C - Ambient'
+        },
+        images: ['images/premium_water_dispenser_office_1770389979443.png', 'images/bandicam 2026-02-06 15-11-17-578.jpg']
+    },
+    {
+        id: 'coffee-barista-pro',
+        category: 'coffee',
+        name: {
+            en: 'BaristaTouch Pro',
+            gr: 'BaristaTouch Pro'
+        },
+        description: {
+            en: 'High-volume coffee vending machine with 21.5" HD touchscreen. Offers 24 customizable coffee recipes including iced coffee options.',
+            gr: 'Μηχανή καφέ μεγάλης χωρητικότητας με οθόνη αφής HD 21.5". Προσφέρει 24 προσαρμόσιμες συνταγές καφέ, συμπεριλαμβανομένων επιλογών παγωμένου καφέ.'
+        },
+        features: {
+            en: ['24 Coffee Varieties', 'Iced Coffee Module', 'Dual Grinders', 'Fresh Milk System', 'Payment System Ready', 'Telemetry Enabled'],
+            gr: ['24 Ποικιλίες Καφέ', 'Μονάδα Παγωμένου Καφέ', 'Διπλοί Μύλοι', 'Σύστημα Φρέσκου Γάλακτος', 'Υποστήριξη Συστημάτων Πληρωμής', 'Τηλεμετρία']
+        },
+        specifications: {
+            capacity: '4kg beans, 600 cups',
+            dimensions: '70cm x 75cm x 183cm',
+            power: '3.2kW',
+            cupsPerDay: '500+'
+        },
+        images: ['images/office_coffee.png', 'images/bandicam 2026-02-06 15-11-24-124.jpg']
+    },
+    {
+        id: 'coffee-compact',
+        category: 'coffee',
+        name: {
+            en: 'Office Star Compact',
+            gr: 'Office Star Compact'
+        },
+        description: {
+            en: 'Perfect entry-level bean-to-cup machine for small to medium offices. Reliable, fast, and easy to maintain.',
+            gr: 'Ιδανική εισαγωγική μηχανή bean-to-cup για μικρά έως μεσαία γραφεία. Αξιόπιστη, γρήγορη και εύκολη στη συντήρηση.'
+        },
+        features: {
+            en: ['One-touch cappuccino', 'Ceramic grinder', 'Auto-cleaning brewing unit', 'Adjustable spout height', 'User profiles'],
+            gr: ['Cappuccino με ένα άγγιγμα', 'Κεραμικός μύλος', 'Αυτοκαθαριζόμενη μονάδα', 'Ρυθμιζόμενο ύψος', 'Προφίλ χρηστών']
+        },
+        specifications: {
+            capacity: '1kg beans',
+            dimensions: '30cm x 45cm x 50cm',
+            power: '1.5kW',
+            cupsPerDay: '50-100'
+        },
+        images: ['images/bandicam 2026-02-06 15-11-27-097.jpg', 'images/bandicam 2026-02-06 15-11-29-340.jpg']
+    },
+    {
+        id: 'snack-healthy-plus',
+        category: 'snacks',
+        name: {
+            en: 'GreenLife Healthy Vending',
+            gr: 'GreenLife Healthy Vending'
+        },
+        description: {
+            en: 'Designed specifically for healthy snack options and salads. Features soft-drop technology to protect delicate items.',
+            gr: 'Σχεδιασμένη ειδικά για υγιεινά σνακ και σαλάτες. Διαθέτει τεχνολογία soft-drop για την προστασία ευαίσθητων προϊόντων.'
+        },
+        features: {
+            en: ['Soft-drop elevator', 'Dual temperature zones', 'Nutritional info display', 'Recycled material construction', 'Energy efficiency A++'],
+            gr: ['Ανελκυστήρας soft-drop', 'Διπλές ζώνες θερμοκρασίας', 'Εμφάνιση διατροφικών πληροφοριών', 'Κατασκευή από ανακυκλωμένα υλικά', 'Ενεργειακή απόδοση A++']
+        },
+        specifications: {
+            capacity: '40 selections',
+            dimensions: '90cm x 88cm x 183cm',
+            power: '0.6kW',
+            temperature: '3°C - 14°C'
+        },
+        images: ['images/vending_office.png', 'images/bandicam 2026-02-06 15-11-32-092.jpg']
+    },
+    {
+        id: 'snack-tabletop',
+        category: 'snacks',
+        name: {
+            en: 'MiniMarket Tabletop',
+            gr: 'MiniMarket Επιτραπέζιο'
+        },
+        description: {
+            en: 'Compact vending solution for impulse snacks/gums/accessories. Can be placed on counters or mounted on walls.',
+            gr: 'Συμπαγής λύση αυτόματης πώλησης για σνακ/τσίχλες/αξεσουάρ. Μπορεί να τοποθετηθεί σε πάγκους ή να στερεωθεί σε τοίχους.'
+        },
+        features: {
+            en: ['Compact footprint', 'Battery operated option', 'Coin mechanism included', 'Vandal resistant', 'High visibility glass'],
+            gr: ['Συμπαγές μέγεθος', 'Επιλογή λειτουργίας με μπαταρία', 'Περιλαμβάνεται κερματοδέκτης', 'Ανθεκτικό στους βανδαλισμούς', 'Γυαλί υψηλής ορατότητας']
+        },
+        specifications: {
+            capacity: '9 selections',
+            dimensions: '50cm x 50cm x 80cm',
+            power: '12V / Mains',
+            temperature: 'Ambient'
+        },
+        images: ['images/bandicam 2026-02-06 15-11-34-537.jpg', 'images/bandicam 2026-02-06 15-11-45-178.jpg']
+    },
     {
         id: 'combo-ultimate',
         category: 'combo',
@@ -321,6 +460,45 @@ const products = [
             'images/bandicam 2026-02-06 15-11-52-152.jpg',
             'images/bandicam 2026-02-06 15-11-55-823.jpg',
             'images/bandicam 2026-02-06 15-12-13-681.jpg'
+        ]
+    },
+    {
+        id: 'water-pure-station',
+        category: 'water',
+        name: {
+            en: 'Pure Filtration Water Station',
+            gr: 'Σταθμός Φιλτραρίσματος Καθαρού Νερού'
+        },
+        description: {
+            en: 'Advanced water dispenser with multi-stage filtration and UV-C purification. Provides chilled, ambient, and sparkling water for premium office hydration.',
+            gr: 'Προηγμένος διανομέας νερού με φιλτράρισμα πολλαπλών σταδίων και αποστείρωση UV-C. Παρέχει κρύο, φυσικό και ανθρακούχο νερό για premium ενυδάτωση γραφείου.'
+        },
+        features: {
+            en: [
+                'Touchless sensor operation',
+                'High-capacity cooling system',
+                'Sparkling water option',
+                'Eco-friendly refrigerant',
+                'Compact sleek design',
+                'Easy filter replacement'
+            ],
+            gr: [
+                'Λειτουργία με αισθητήρα ανέπαφα',
+                'Σύστημα ψύξης υψηλής απόδοσης',
+                'Επιλογή ανθρακούχου νερού',
+                'Οικολογικό ψυκτικό υγρό',
+                'Συμπαγής κομψός σχεδιασμός',
+                'Εύκολη αντικατάσταση φίλτρου'
+            ]
+        },
+        specifications: {
+            capacity: '30L/hour chilled',
+            dimensions: '35cm x 40cm x 115cm',
+            power: '0.5kW',
+            temperature: '4-10°C'
+        },
+        images: [
+            'images/water_system.png'
         ]
     }
 ];

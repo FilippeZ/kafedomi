@@ -101,11 +101,14 @@
             return;
         }
 
-        grid.style.display = 'grid';
-        noProducts.style.display = 'none';
-
         // Render product cards
         grid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
+
+        // Observe new elements
+        if (window.animationObserver) {
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => window.animationObserver.observer.observe(item));
+        }
 
         // Add click handlers
         document.querySelectorAll('.product-item').forEach(item => {
@@ -119,10 +122,11 @@
     // Create product card HTML
     function createProductCard(product) {
         const categoryLabels = {
-            coffee: { en: 'Coffee', gr: 'Καφές' },
-            snacks: { en: 'Snacks', gr: 'Σνακ' },
-            drinks: { en: 'Drinks', gr: 'Ποτά' },
-            combo: { en: 'Combo', gr: 'Combo' }
+            coffee: { en: 'Coffee Systems', gr: 'Συστήματα Καφέ' },
+            snacks: { en: 'Vending Snacks', gr: 'Vending Σνακ' },
+            drinks: { en: 'Drink Coolers', gr: 'Ψυγεία Ποτών' },
+            combo: { en: 'Combo Units', gr: 'Μονάδες Combo' },
+            water: { en: 'Water Solutions', gr: 'Λύσεις Νερού' }
         };
 
         const categoryLabel = categoryLabels[product.category]?.[currentLang] || product.category;
@@ -134,7 +138,7 @@
         const imageUrl = product.images[0] || 'images/placeholder.jpg';
 
         return `
-            <div class="product-item" data-product-id="${product.id}">
+            <div class="product-item reveal" data-product-id="${product.id}">
                 <div class="product-item__image">
                     <img src="${imageUrl}" alt="${name}" loading="lazy">
                 </div>
@@ -168,12 +172,8 @@
     }
 
     // Re-render when language changes
-    if (window.languageManager) {
-        const originalSwitchLanguage = window.languageManager.switchLanguage.bind(window.languageManager);
-        window.languageManager.switchLanguage = function (lang) {
-            originalSwitchLanguage(lang);
-            currentLang = lang;
-            renderProducts();
-        };
-    }
+    window.addEventListener('languageChanged', (e) => {
+        currentLang = e.detail.lang;
+        renderProducts();
+    });
 })();

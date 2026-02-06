@@ -106,10 +106,11 @@
     // Render product information
     function renderProductInfo() {
         const categoryLabels = {
-            coffee: { en: 'Coffee Machines', gr: 'Μηχανές Καφέ' },
-            snacks: { en: 'Snack Vending', gr: 'Vending Σνακ' },
+            coffee: { en: 'Coffee Systems', gr: 'Συστήματα Καφέ' },
+            snacks: { en: 'Vending Snacks', gr: 'Vending Σνακ' },
             drinks: { en: 'Drink Coolers', gr: 'Ψυγεία Ποτών' },
-            combo: { en: 'Combo Units', gr: 'Combo Μονάδες' }
+            combo: { en: 'Combo Units', gr: 'Μονάδες Combo' },
+            water: { en: 'Water Solutions', gr: 'Λύσεις Νερού' }
         };
 
         const categoryLabel = categoryLabels[currentProduct.category]?.[currentLang] || currentProduct.category;
@@ -117,9 +118,9 @@
         const description = currentProduct.description[currentLang] || currentProduct.description.en;
         const features = currentProduct.features[currentLang] || currentProduct.features.en;
 
-        const featuresText = currentLang === 'en' ? 'Key Features' : 'Βασικά Χαρακτηριστικά';
+        const featuresText = currentLang === 'en' ? 'Core Features' : 'Βασικά Χαρακτηριστικά';
         const specsText = currentLang === 'en' ? 'Technical Specifications' : 'Τεχνικές Προδιαγραφές';
-        const requestQuoteText = currentLang === 'en' ? 'Request a Quote' : 'Ζητήστε Προσφορά';
+        const requestQuoteText = currentLang === 'en' ? 'Request a Professional Quote' : 'Ζητήστε Επαγγελματική Προσφορά';
 
         const specsLabels = {
             capacity: { en: 'Capacity', gr: 'Χωρητικότητα' },
@@ -131,18 +132,18 @@
         };
 
         const productInfoHTML = `
-            <span class="product-info__category">${categoryLabel}</span>
-            <h1 class="product-info__title">${name}</h1>
-            <p class="product-info__desc">${description}</p>
+            <span class="product-info__category reveal">${categoryLabel}</span>
+            <h1 class="product-info__title reveal">${name}</h1>
+            <p class="product-info__desc reveal">${description}</p>
 
-            <div class="product-info__section">
+            <div class="product-info__section reveal">
                 <h3>${featuresText}</h3>
                 <ul class="product-info__features">
                     ${features.map(feature => `<li>${feature}</li>`).join('')}
                 </ul>
             </div>
 
-            <div class="product-info__section">
+            <div class="product-info__section reveal">
                 <h3>${specsText}</h3>
                 <div class="product-info__specs">
                     <dl>
@@ -154,12 +155,17 @@
                 </div>
             </div>
 
-            <div class="product-info__cta">
+            <div class="product-info__cta reveal">
                 <a href="index.html#cta" class="btn btn-large btn-primary">${requestQuoteText}</a>
             </div>
         `;
 
         document.getElementById('product-info').innerHTML = productInfoHTML;
+
+        // Re-observe animations
+        if (window.animationObserver) {
+            document.querySelectorAll('#product-info .reveal').forEach(el => window.animationObserver.observer.observe(el));
+        }
     }
 
     // Load related products
@@ -174,14 +180,6 @@
                 relatedProducts = products
                     .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
                     .slice(0, 3);
-            } else {
-                const response = await fetch(`/api/products/category/${currentProduct.category}`);
-                const data = await response.json();
-                if (data.success) {
-                    relatedProducts = data.products
-                        .filter(p => p.id !== currentProduct.id)
-                        .slice(0, 3);
-                }
             }
 
             if (relatedProducts.length > 0) {
@@ -198,6 +196,7 @@
     // Render related products
     function renderRelatedProducts(relatedProducts) {
         const grid = document.getElementById('related-grid');
+        grid.className = 'products-grid'; // Use common grid class
 
         grid.innerHTML = relatedProducts.map(product => {
             const name = product.name[currentLang] || product.name.en;
@@ -206,7 +205,7 @@
             const imageUrl = product.images[0] || 'images/placeholder.jpg';
 
             return `
-                <div class="product-item" onclick="window.location.href='product-detail.html?id=${product.id}'">
+                <div class="product-item reveal" onclick="window.location.href='product-detail.html?id=${product.id}'">
                     <div class="product-item__image">
                         <img src="${imageUrl}" alt="${name}" loading="lazy">
                     </div>
@@ -223,6 +222,11 @@
                 </div>
             `;
         }).join('');
+
+        // Re-observe animations
+        if (window.animationObserver) {
+            grid.querySelectorAll('.reveal').forEach(el => window.animationObserver.observer.observe(el));
+        }
     }
 
     // Helper function
@@ -232,15 +236,16 @@
     }
 
     // Re-render when language changes
+    window.addEventListener('languageChanged', (e) => {
+        currentLang = e.detail.lang;
+        if (currentProduct) {
+            renderProduct();
+            loadRelatedProducts();
+        }
+    });
+
+    // Initial language check
     if (window.languageManager) {
-        const originalSwitchLanguage = window.languageManager.switchLanguage.bind(window.languageManager);
-        window.languageManager.switchLanguage = function (lang) {
-            originalSwitchLanguage(lang);
-            currentLang = lang;
-            if (currentProduct) {
-                renderProduct();
-                loadRelatedProducts();
-            }
-        };
+        currentLang = window.languageManager.currentLang;
     }
 })();
