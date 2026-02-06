@@ -1,0 +1,14 @@
+# Response language
+language: en  # en, ko, ja, zh, etc.
+
+# Default CLI (single tasks)
+default_cli: gemini
+
+# Per-agent CLI mapping (multi-CLI mode)
+agent_cli_mapping:
+  frontend: gemini
+  backend: gemini
+  mobile: gemini
+  pm: gemini
+  qa: gemini
+  debug: gemini

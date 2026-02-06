@@ -1,0 +1,7 @@
+
+# Serena Memory (runtime orchestrator state)
+.serena/memories/*
+!.serena/memories/.gitkeep
+
+# oh-my-ag cloned repository (temporary)
+oh-my-ag/
