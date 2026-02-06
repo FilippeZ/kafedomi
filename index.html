@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -20,30 +21,33 @@
                 <img src="logo.png" alt="Kafedomi Logo">
                 <span class="logo-text">KAFEDOMI</span>
             </a>
+
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item has-dropdown">
-                        <a href="#" class="nav__link" data-en="Vending Machines" data-gr="Μηχανές Vending">Vending
-                            Machines</a>
+                        <a href="#" class="nav__link" data-en="Vending" data-gr="Vending">Vending</a>
                         <div class="dropdown-menu">
-                            <a href="products.html?category=coffee" data-en="Coffee Machines"
-                                data-gr="Μηχανές Καφέ">Coffee Machines</a>
-                            <a href="products.html?category=snacks" data-en="Snack Vending" data-gr="Vending Σνακ">Snack
-                                Vending</a>
-                            <a href="products.html?category=drinks" data-en="Cold Drinks" data-gr="Κρύα Ποτά">Cold
-                                Drinks</a>
-                            <a href="products.html?category=combo" data-en="Combo Units" data-gr="Combo Μονάδες">Combo
-                                Units</a>
+                            <a href="products.html?category=snacks" data-en="Snacks" data-gr="Σνακ">Snacks</a>
+                            <a href="products.html?category=drinks" data-en="Drinks" data-gr="Ποτά">Drinks</a>
+                            <a href="products.html?category=food" data-en="Food" data-gr="Φαγητό">Food</a>
+                        </div>
+                    </li>
+                    <li class="nav__item has-dropdown">
+                        <a href="#" class="nav__link" data-en="Coffee & Hot Drinks"
+                            data-gr="Καφές & Ζεστά Ροφήματα">Coffee & Hot Drinks</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=coffee" data-en="Office Machines"
+                                data-gr="Μηχανές Γραφείου">Office Machines</a>
+                            <a href="products.html?category=coffee" data-en="Commercial"
+                                data-gr="Εμπορικές">Commercial</a>
                         </div>
                     </li>
                     <li class="nav__item">
-                        <a href="#sectors" class="nav__link" data-en="Sectors" data-gr="Τομείς">Sectors</a>
+                        <a href="products.html?category=water" class="nav__link" data-en="Water"
+                            data-gr="Νερό">Water</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link" data-en="About Us" data-gr="Σχετικά">About Us</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#cta" class="nav__link" data-en="Contact" data-gr="Επικοινωνία">Contact</a>
+                        <a href="#sectors" class="nav__link" data-en="Services" data-gr="Υπηρεσίες">Services</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +58,7 @@
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" data-lang="gr">GR</button>
                 </div>
-                <button class="btn btn-primary" data-en="Request a Quote" data-gr="Ζητήστε Προσφορά">Request a
+                <button class="btn btn-primary btn-cta" data-en="Request a Quote" data-gr="Ζητήστε Προσφορά">Request a
                     Quote</button>
             </div>
 

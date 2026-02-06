@@ -1,22 +1,23 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    /* Coffee & Cream Color Palette */
-    --color-cream: #F5F1E8;
-    /* Κρεμ / Ανοιχτό Μπεζ - Main Background */
+    /* Professional B2B Color Palette */
+    --color-cream: #F5F5DC;
+    /* Background */
     --color-white: #FFFFFF;
-    /* Λευκό - Cards & Boxes */
-    --color-dark-chocolate: #3E2723;
-    /* Σκούρο Καφέ - Headers & Footer */
-    --color-mocha: #8B6F47;
-    /* Μεσαίο/Ζεστό Καφέ - Buttons & Links */
+    /* Cards & Boxes */
+    --color-dark-chocolate: #2B1B17;
+    /* Headings & Footer */
+    --color-mocha: #8B4513;
+    /* Buttons & Accents */
     --color-cinnamon: #A0826D;
-    /* Ανοιχτό Καφέ - Hover states */
-    --color-text-dark: #2C2419;
-    /* Σχεδόν Μαύρο - Body text */
-    --color-text-light: #F5F1E8;
-    /* Κρεμ - Light text on dark */
+    /* Hover states */
+    --color-text-dark: #2B1B17;
+    /* Body text */
+    --color-text-light: #F5F5DC;
+    /* Light text on dark */
 
     /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
@@ -27,6 +28,8 @@
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
@@ -37,10 +40,10 @@
     --transition-slow: 0.5s ease;
 
     /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px rgba(43, 27, 23, 0.1);
+    --shadow-md: 0 4px 6px rgba(43, 27, 23, 0.1);
+    --shadow-lg: 0 10px 25px rgba(43, 27, 23, 0.15);
+    --shadow-xl: 0 20px 40px rgba(43, 27, 23, 0.2);
 }
 
 /* ===== RESET & BASE ===== */
@@ -116,30 +119,38 @@ button {
 .btn:hover {
     background-color: var(--color-dark-chocolate);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.3);
+    box-shadow: 0 4px 12px rgba(43, 27, 23, 0.3);
 }
 
 .btn-primary {
-    background-color: var(--color-accent-red);
-    color: var(--color-secondary);
+    background-color: var(--color-mocha);
+    color: var(--color-white);
 }
 
 .btn-primary:hover {
-    background-color: #A00000;
+    background-color: var(--color-dark-chocolate);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 
+.btn-cta {
+    background-color: var(--color-mocha);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
 .btn-hero {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-white);
+    color: var(--color-dark-chocolate);
     padding: 1rem 2.5rem;
     font-size: 1.05rem;
     font-weight: var(--font-weight-bold);
 }
 
 .btn-hero:hover {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-cream);
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
 }
@@ -203,7 +214,13 @@ button {
 .nav__list {
     display: none;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .nav__list {
+        display: flex;
+    }
 }
 
 .nav__link {
@@ -292,7 +309,7 @@ button {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--color-gray-100);
+    background-color: rgba(43, 27, 23, 0.05);
     border-radius: 4px;
 }
 
@@ -408,8 +425,9 @@ button {
 }
 
 .hero__title {
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: var(--font-weight-black);
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: var(--spacing-md);
     letter-spacing: -1px;
