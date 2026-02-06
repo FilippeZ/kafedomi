@@ -50,10 +50,10 @@ class HeroSlideshow {
     }
 
     playAnimation() {
-        // 42ms = ~24fps like a movie
+        // 83ms = ~12fps, slower and more relaxed
         this.interval = setInterval(() => {
             this.nextSlide();
-        }, 42);
+        }, 83);
     }
 
     nextSlide() {
