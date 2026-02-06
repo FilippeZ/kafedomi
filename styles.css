@@ -192,7 +192,7 @@ button {
 }
 
 .nav__logo img {
-    height: 40px;
+    height: 60px;
     width: auto;
 }
 
@@ -230,6 +230,55 @@ button {
 
 .nav__link:hover::after {
     width: 100%;
+}
+
+/* Dropdown Menu Styles */
+.nav__item {
+    position: relative;
+}
+
+.nav__item.has-dropdown>.nav__link::after {
+    content: ' ▼';
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-white);
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.15);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 1rem;
+}
+
+.nav__item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-dark-chocolate);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-cream);
+    color: var(--color-mocha);
+    padding-left: 2rem;
 }
 
 .nav__actions {
@@ -700,7 +749,7 @@ button {
 }
 
 .cta__form {
-    background-color: var(--color-white);
+    background-color: var(--color-cream);
     padding: var(--spacing-xl);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);

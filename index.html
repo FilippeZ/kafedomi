@@ -22,17 +22,28 @@
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#solutions" class="nav__link" data-en="Solutions" data-gr="Λύσεις">Solutions</a>
+                    <li class="nav__item has-dropdown">
+                        <a href="#" class="nav__link" data-en="Vending Machines" data-gr="Μηχανές Vending">Vending
+                            Machines</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=coffee" data-en="Coffee Machines"
+                                data-gr="Μηχανές Καφέ">Coffee Machines</a>
+                            <a href="products.html?category=snacks" data-en="Snack Vending" data-gr="Vending Σνακ">Snack
+                                Vending</a>
+                            <a href="products.html?category=drinks" data-en="Cold Drinks" data-gr="Κρύα Ποτά">Cold
+                                Drinks</a>
+                            <a href="products.html?category=combo" data-en="Combo Units" data-gr="Combo Μονάδες">Combo
+                                Units</a>
+                        </div>
                     </li>
                     <li class="nav__item">
                         <a href="#sectors" class="nav__link" data-en="Sectors" data-gr="Τομείς">Sectors</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#products" class="nav__link" data-en="Products" data-gr="Προϊόντα">Products</a>
+                        <a href="#about" class="nav__link" data-en="About Us" data-gr="Σχετικά">About Us</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link" data-en="About Us" data-gr="Σχετικά">About Us</a>
+                        <a href="#cta" class="nav__link" data-en="Contact" data-gr="Επικοινωνία">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -345,6 +356,10 @@
 
                     <div class="form-row">
                         <div class="form-group">
+                            <input type="tel" id="phone" required placeholder=" ">
+                            <label for="phone" data-en="Phone Number" data-gr="Τηλέφωνο">Phone Number</label>
+                        </div>
+                        <div class="form-group">
                             <select id="sector" required>
                                 <option value="" disabled selected></option>
                                 <option value="hotel" data-en="Hotel" data-gr="Ξενοδοχείο">Hotel</option>
@@ -355,6 +370,9 @@
                             </select>
                             <label for="sector" data-en="Sector" data-gr="Τομέας">Sector</label>
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group">
                             <input type="email" id="email" required placeholder=" ">
                             <label for="email" data-en="Email Address" data-gr="Email">Email Address</label>
