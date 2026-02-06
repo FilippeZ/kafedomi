@@ -58,11 +58,26 @@ app.post('/api/contact', async (req, res) => {
             submittedAt: new Date().toISOString()
         };
 
-        // Send emails
-        await sendContactFormEmails(formData, language || 'en');
+        // Log submission
+        console.log('📩 New contact form submission:', formData);
 
-        // Log submission (in production, save to database)
-        console.log('Contact form submission:', formData);
+        // Try to send emails (only if SMTP is properly configured)
+        const smtpConfigured = process.env.SMTP_USER &&
+            process.env.SMTP_PASS &&
+            !process.env.SMTP_USER.includes('your-email') &&
+            !process.env.SMTP_PASS.includes('your-app');
+
+        if (smtpConfigured) {
+            try {
+                await sendContactFormEmails(formData, language || 'en');
+                console.log('✅ Email sent successfully');
+            } catch (emailError) {
+                console.log('⚠️ Email failed, but form submission saved:', emailError.message);
+                // Don't fail the request, just log it
+            }
+        } else {
+            console.log('📧 Email skipped (SMTP not configured) - Data logged above');
+        }
 
         // Success response
         res.json({
