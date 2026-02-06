@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafedomi - Premium Vending Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <span class="logo-text">KAFEDOMI</span>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#solutions" class="nav__link" data-en="Solutions" data-gr="Λύσεις">Solutions</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#sectors" class="nav__link" data-en="Sectors" data-gr="Τομείς">Sectors</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#products" class="nav__link" data-en="Products" data-gr="Προϊόντα">Products</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link" data-en="About Us" data-gr="Σχετικά">About Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__actions">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="gr">GR</button>
+                </div>
+                <button class="btn btn-primary" data-en="Request a Quote" data-gr="Ζητήστε Προσφορά">Request a Quote</button>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_048.jpg" alt="Kafedomi Vending Machine" class="hero__img">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="hero__content container">
+            <h1 class="hero__title" data-en="Elevating the Breakroom Experience." data-gr="Αναβαθμίζοντας την Εμπειρία του Διαλείμματος.">
+                Elevating the Breakroom Experience.
+            </h1>
+            <p class="hero__subtitle" data-en="Smart vending solutions for the modern workplace" data-gr="Έξυπνες λύσεις vending για τον σύγχρονο χώρο εργασίας">
+                Smart vending solutions for the modern workplace
+            </p>
+            <button class="btn btn-hero" data-en="Discover Our Solutions" data-gr="Ανακαλύψτε τις Λύσεις μας">
+                Discover Our Solutions
+            </button>
+        </div>
+        <div class="hero__scroll">
+            <span data-en="Scroll to explore" data-gr="Κάντε scroll για εξερεύνηση">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Target Sectors -->
+    <section class="sectors" id="sectors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Where We Serve" data-gr="Που Εξυπηρετούμε">Where We Serve</h2>
+                <p class="section-subtitle" data-en="Tailored solutions for every industry" data-gr="Προσαρμοσμένες λύσεις για κάθε κλάδο">
+                    Tailored solutions for every industry
+                </p>
+            </div>
+
+            <div class="sectors__grid">
+                <div class="sector-card">
+                    <div class="sector-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="sector-card__title" data-en="Hotels" data-gr="Ξενοδοχεία">Hotels</h3>
+                    <p class="sector-card__desc" data-en="Premium guest convenience" data-gr="Premium εξυπηρέτηση επισκεπτών">
+                        Premium guest convenience
+                    </p>
+                </div>
+
+                <div class="sector-card">
+                    <div class="sector-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3 class="sector-card__title" data-en="Factories" data-gr="Εργοστάσια">Factories</h3>
+                    <p class="sector-card__desc" data-en="24/7 energy for the workforce" data-gr="24/7 ενέργεια για το εργατικό δυναμικό">
+                        24/7 energy for the workforce
+                    </p>
+                </div>
+
+                <div class="sector-card">
+                    <div class="sector-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="sector-card__title" data-en="Companies" data-gr="Εταιρείες">Companies</h3>
+                    <p class="sector-card__desc" data-en="Enhancing office culture" data-gr="Αναβάθμιση της εταιρικής κουλτούρας">
+                        Enhancing office culture
+                    </p>
+                </div>
+
+                <div class="sector-card">
+                    <div class="sector-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="sector-card__title" data-en="Hospitals" data-gr="Νοσοκομεία">Hospitals</h3>
+                    <p class="sector-card__desc" data-en="Reliable service for staff and visitors" data-gr="Αξιόπιστη εξυπηρέτηση για προσωπικό και επισκέπτες">
+                        Reliable service for staff and visitors
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Pillars -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="What We Offer" data-gr="Τι Προσφέρουμε">What We Offer</h2>
+                <p class="section-subtitle" data-en="Premium quality in every category" data-gr="Premium ποιότητα σε κάθε κατηγορία">
+                    Premium quality in every category
+                </p>
+            </div>
+
+            <div class="products__grid">
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_025.jpg" alt="Premium Coffee">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Premium Coffee" data-gr="Premium Καφές">Premium Coffee</h3>
+                        <p class="product-card__desc" data-en="Bean-to-cup technology for the perfect espresso, cappuccino, or latte every time." data-gr="Τεχνολογία bean-to-cup για τον τέλειο espresso, cappuccino ή latte κάθε φορά.">
+                            Bean-to-cup technology for the perfect espresso, cappuccino, or latte every time.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Freshly ground beans" data-gr="Φρεσκοαλεσμένοι κόκκοι">Freshly ground beans</li>
+                            <li data-en="Customizable strength" data-gr="Προσαρμόσιμη ένταση">Customizable strength</li>
+                            <li data-en="Multiple varieties" data-gr="Πολλαπλές ποικιλίες">Multiple varieties</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_055.jpg" alt="Smart Snacks">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Smart Snacks" data-gr="Έξυπνα Σνακ">Smart Snacks</h3>
+                        <p class="product-card__desc" data-en="Fresh croissants, premium chips, and healthy options delivered daily." data-gr="Φρέσκα κρουασάν, premium chips και υγιεινές επιλογές καθημερινά.">
+                            Fresh croissants, premium chips, and healthy options delivered daily.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Fresh daily delivery" data-gr="Φρέσκια καθημερινή παράδοση">Fresh daily delivery</li>
+                            <li data-en="Healthy alternatives" data-gr="Υγιεινές εναλλακτικές">Healthy alternatives</li>
+                            <li data-en="Top-tier brands" data-gr="Κορυφαίες μάρκες">Top-tier brands</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_048.jpg" alt="Chilled Drinks">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" data-en="Chilled Drinks" data-gr="Κρύα Ποτά">Chilled Drinks</h3>
+                        <p class="product-card__desc" data-en="Ice-cold Coca-Cola, energy drinks, juices, and water at the perfect temperature." data-gr="Παγωμένη Coca-Cola, ενεργειακά ποτά, χυμοί και νερό στην τέλεια θερμοκρασία.">
+                            Ice-cold Coca-Cola, energy drinks, juices, and water at the perfect temperature.
+                        </p>
+                        <ul class="product-card__features">
+                            <li data-en="Optimal cooling" data-gr="Βέλτιστη ψύξη">Optimal cooling</li>
+                            <li data-en="Wide selection" data-gr="Μεγάλη ποικιλία">Wide selection</li>
+                            <li data-en="Energy & hydration" data-gr="Ενέργεια & ενυδάτωση">Energy & hydration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kafedomi Advantage -->
+    <section class="advantage" id="solutions">
+        <div class="container">
+            <div class="advantage__content">
+                <div class="advantage__text">
+                    <h2 class="section-title" data-en="The Kafedomi Advantage" data-gr="Το Πλεονέκτημα Kafedomi">
+                        The Kafedomi Advantage
+                    </h2>
+                    <p class="advantage__intro" data-en="The architecture of the perfect break" data-gr="Η αρχιτεκτονική του τέλειου διαλείμματος">
+                        The architecture of the perfect break
+                    </p>
+
+                    <div class="advantage__features">
+                        <div class="advantage__feature">
+                            <div class="advantage__feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <div class="advantage__feature-content">
+                                <h3 data-en="AI-Powered Inventory" data-gr="Διαχείριση Αποθέματος με AI">AI-Powered Inventory</h3>
+                                <p data-en="Smart algorithms predict demand and optimize stock levels automatically." data-gr="Έξυπνοι αλγόριθμοι προβλέπουν τη ζήτηση και βελτιστοποιούν τα επίπεδα αποθέματος αυτόματα.">
+                                    Smart algorithms predict demand and optimize stock levels automatically.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="advantage__feature">
+                            <div class="advantage__feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="advantage__feature-content">
+                                <h3 data-en="Cashless Payments" data-gr="Ανέπαφες Πληρωμές">Cashless Payments</h3>
+                                <p data-en="Accept cards, mobile payments, and digital wallets for seamless transactions." data-gr="Δεχόμαστε κάρτες, mobile πληρωμές και ψηφιακά πορτοφόλια για απρόσκοπτες συναλλαγές.">
+                                    Accept cards, mobile payments, and digital wallets for seamless transactions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="advantage__feature">
+                            <div class="advantage__feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="advantage__feature-content">
+                                <h3 data-en="24/7 Technical Support" data-gr="24/7 Τεχνική Υποστήριξη">24/7 Technical Support</h3>
+                                <p data-en="Round-the-clock monitoring and rapid response to keep your machines running." data-gr="Παρακολούθηση όλο το 24ωρο και γρήγορη ανταπόκριση για να λειτουργούν οι μηχανές σας.">
+                                    Round-the-clock monitoring and rapid response to keep your machines running.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advantage__visual">
+                    <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_025.jpg" alt="Smart Technology" class="advantage__img">
+                    <div class="advantage__stats">
+                        <div class="stat-card">
+                            <span class="stat-number">99.8%</span>
+                            <span class="stat-label" data-en="Uptime" data-gr="Διαθεσιμότητα">Uptime</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label" data-en="Installations" data-gr="Εγκαταστάσεις">Installations</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">2Hr</span>
+                            <span class="stat-label" data-en="Response Time" data-gr="Χρόνος Απόκρισης">Response Time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta" id="about">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title" data-en="Ready to transform your space?" data-gr="Είστε έτοιμοι να αλλάξετε τον χώρο σας;">
+                    Ready to transform your space?
+                </h2>
+                <p class="cta__subtitle" data-en="Get a customized quote tailored to your business needs" data-gr="Λάβετε μια προσαρμοσμένη προσφορά για τις ανάγκες της επιχείρησής σας">
+                    Get a customized quote tailored to your business needs
+                </p>
+
+                <form class="cta__form" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name" data-en="Full Name" data-gr="Ονοματεπώνυμο">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" required placeholder=" ">
+                            <label for="company" data-en="Company Name" data-gr="Όνομα Εταιρείας">Company Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select id="sector" required>
+                                <option value="" disabled selected></option>
+                                <option value="hotel" data-en="Hotel" data-gr="Ξενοδοχείο">Hotel</option>
+                                <option value="factory" data-en="Factory" data-gr="Εργοστάσιο">Factory</option>
+                                <option value="company" data-en="Company" data-gr="Εταιρεία">Company</option>
+                                <option value="hospital" data-en="Hospital" data-gr="Νοσοκομείο">Hospital</option>
+                                <option value="other" data-en="Other" data-gr="Άλλο">Other</option>
+                            </select>
+                            <label for="sector" data-en="Sector" data-gr="Τομέας">Sector</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email" data-en="Email Address" data-gr="Email">Email Address</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder=" "></textarea>
+                        <label for="message" data-en="Message (Optional)" data-gr="Μήνυμα (Προαιρετικό)">Message (Optional)</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" data-en="Request Quote" data-gr="Ζητήστε Προσφορά">
+                        Request Quote
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__logo">KAFEDOMI</h3>
+                    <p class="footer__tagline" data-en="The architecture of the perfect break" data-gr="Η αρχιτεκτονική του τέλειου διαλείμματος">
+                        The architecture of the perfect break
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 data-en="Solutions" data-gr="Λύσεις">Solutions</h4>
+                        <ul>
+                            <li><a href="#" data-en="Hotels" data-gr="Ξενοδοχεία">Hotels</a></li>
+                            <li><a href="#" data-en="Factories" data-gr="Εργοστάσια">Factories</a></li>
+                            <li><a href="#" data-en="Companies" data-gr="Εταιρείες">Companies</a></li>
+                            <li><a href="#" data-en="Hospitals" data-gr="Νοσοκομεία">Hospitals</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 data-en="Products" data-gr="Προϊόντα">Products</h4>
+                        <ul>
+                            <li><a href="#" data-en="Coffee Machines" data-gr="Μηχανές Καφέ">Coffee Machines</a></li>
+                            <li><a href="#" data-en="Snack Vending" data-gr="Vending Σνακ">Snack Vending</a></li>
+                            <li><a href="#" data-en="Drink Coolers" data-gr="Ψυγεία Ποτών">Drink Coolers</a></li>
+                            <li><a href="#" data-en="Combo Units" data-gr="Συνδυαστικές Μονάδες">Combo Units</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 data-en="Company" data-gr="Εταιρεία">Company</h4>
+                        <ul>
+                            <li><a href="#" data-en="About Us" data-gr="Σχετικά">About Us</a></li>
+                            <li><a href="#" data-en="Contact" data-gr="Επικοινωνία">Contact</a></li>
+                            <li><a href="#" data-en="Careers" data-gr="Καριέρα">Careers</a></li>
+                            <li><a href="#" data-en="Support" data-gr="Υποστήριξη">Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 data-en="Contact" data-gr="Επικοινωνία">Contact</h4>
+                        <ul>
+                            <li><a href="tel:+302101234567">+30 210 123 4567</a></li>
+                            <li><a href="mailto:info@kafedomi.gr">info@kafedomi.gr</a></li>
+                            <li data-en="Athens, Greece" data-gr="Αθήνα, Ελλάδα">Athens, Greece</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Kafedomi. <span data-en="All rights reserved." data-gr="Όλα τα δικαιώματα διατηρούνται.">All rights reserved.</span></p>
+                <div class="footer__social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
