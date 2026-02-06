@@ -408,8 +408,8 @@ class CTAButtonManager {
     }
 
     init() {
-        // Get all CTA buttons
-        const ctaButtons = document.querySelectorAll('.btn-primary, .btn-hero');
+        // Get all CTA buttons including the header CTA
+        const ctaButtons = document.querySelectorAll('.btn-primary, .btn-hero, .btn-cta');
 
         ctaButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {

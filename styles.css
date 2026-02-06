@@ -189,6 +189,7 @@ button {
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    position: relative;
 }
 
 .nav__logo {
@@ -200,6 +201,7 @@ button {
     color: var(--color-dark-chocolate);
     text-decoration: none;
     letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
 .nav__logo img {
@@ -211,10 +213,18 @@ button {
     color: var(--color-dark-chocolate);
 }
 
+.nav__menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .nav__list {
     display: none;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 @media (min-width: 992px) {
@@ -709,7 +719,7 @@ button {
 }
 
 .advantage__feature-content p {
-    color: var(--color-gray-200);
+    color: #D4C4B5;
     line-height: 1.7;
 }
 
@@ -782,7 +792,7 @@ button {
 
 .cta__subtitle {
     font-size: 1.125rem;
-    color: var(--color-gray-200);
+    color: #D4C4B5;
     margin-bottom: var(--spacing-2xl);
 }
 
@@ -808,6 +818,7 @@ button {
 
 .form-group {
     position: relative;
+    margin-bottom: 0.5rem;
 }
 
 .form-group input,
@@ -815,12 +826,13 @@ button {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid var(--color-gray-300);
+    border: 2px solid #D4C4B5;
     border-radius: 6px;
     font-family: inherit;
     font-size: 1rem;
-    transition: var(--transition-base);
-    background-color: var(--color-secondary);
+    transition: all 0.3s ease;
+    background-color: #FFFFFF;
+    color: var(--color-dark-chocolate);
 }
 
 .form-group input:focus,
@@ -828,17 +840,18 @@ button {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-mocha);
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
 .form-group label {
     position: absolute;
     left: 1rem;
     top: 1rem;
-    color: var(--color-gray-700);
+    color: #8B7355;
     font-size: 1rem;
     pointer-events: none;
-    transition: var(--transition-fast);
-    background-color: var(--color-secondary);
+    transition: all 0.2s ease;
+    background-color: #FFFFFF;
     padding: 0 0.25rem;
 }
 
