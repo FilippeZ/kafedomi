@@ -42,6 +42,16 @@
                             <a href="about.html" class="nav__link" data-en="About Us" data-gr="Σχετικά με εμάς">About Us</a>
                         </li>
                     </ul>
+
+                    <!-- Mobile Specific Actions -->
+                    <div class="nav__actions-mobile">
+                        <div class="language-toggle">
+                            <button class="lang-btn" data-lang="en">EN</button>
+                            <span class="lang-divider">|</span>
+                            <button class="lang-btn" data-lang="gr">GR</button>
+                        </div>
+                        <a href="index.html#quote-section" class="btn btn-primary btn-cta" data-en="Request a Quote" data-gr="Ζητήστε Προσφορά">Request a Quote</a>
+                    </div>
                 </div>
 
                 <div class="nav__actions">

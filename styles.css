@@ -437,13 +437,80 @@ button {
     background-color: var(--color-dark-chocolate);
 }
 
-@media (min-width: 1024px) {
-    .nav__list {
+@media (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-dark-chocolate);
+        padding: 6rem 2rem 2rem;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
+        /* Override display: none */
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    .nav__menu.show {
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .nav__link {
+        font-size: 1.25rem;
+        color: var(--color-white) !important;
+    }
+
+    .nav__actions {
+        display: none;
+        /* Hide actions in mobile header, we'll put them in menu if needed, or keeping it simple */
+    }
+
+    /* Put lang toggle and CTA inside the mobile menu */
+    .nav__menu .nav__actions-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .nav__menu .btn-cta {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-mocha);
+        color: var(--color-white);
     }
 
     .nav__toggle {
-        display: none;
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav__toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        background-color: var(--color-white) !important;
+    }
+
+    .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav__toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+        background-color: var(--color-white) !important;
     }
 }
 
@@ -1024,9 +1091,22 @@ button {
 
 .advantage__stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
     margin-top: var(--spacing-lg);
+}
+
+@media (min-width: 480px) {
+    .advantage__stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .advantage__stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
 }
 
 .stat-card {
@@ -1087,9 +1167,21 @@ button {
 
 .cta__form {
     background-color: var(--color-cream);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-md);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 480px) {
+    .cta__form {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (min-width: 768px) {
+    .cta__form {
+        padding: var(--spacing-xl);
+    }
 }
 
 .form-row {

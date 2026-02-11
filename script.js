@@ -321,9 +321,17 @@ if (contactForm) {
             }
         } catch (error) {
             console.error('Form submission error:', error);
-            alert(error.message || (currentLang === 'en'
+
+            let errorMsg = currentLang === 'en'
                 ? 'Error sending message. Please try again.'
-                : 'Σφάλμα κατά την αποστολή. Παρακαλώ προσπαθήστε ξανά.'));
+                : 'Σφάλμα κατά την αποστολή. Παρακαλώ προσπαθήστε ξανά.';
+
+            // If we're on Vercel, it might be a config issue
+            if (window.location.hostname.includes('vercel.app')) {
+                console.warn('Submission failed on Vercel. Ensure environment variables (SMTP_USER/PASS) are set in the Vercel dashboard.');
+            }
+
+            alert(error.message || errorMsg);
         } finally {
             btn.textContent = originalText;
             btn.disabled = false;
