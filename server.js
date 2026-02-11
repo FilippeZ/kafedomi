@@ -130,7 +130,7 @@ app.get('/api/products', (req, res) => {
         // Verify image paths exist, fallback to placeholder
         filteredProducts = filteredProducts.map(product => {
             const validImages = product.images.filter(imgPath => {
-                const fullPath = path.join(__dirname, imgPath);
+                const fullPath = path.join(process.cwd(), imgPath);
                 return fs.existsSync(fullPath);
             });
 
@@ -167,7 +167,7 @@ app.get('/api/products/:id', (req, res) => {
 
         // Verify image paths exist
         const validImages = product.images.filter(imgPath => {
-            const fullPath = path.join(__dirname, imgPath);
+            const fullPath = path.join(process.cwd(), imgPath);
             return fs.existsSync(fullPath);
         });
 
@@ -264,9 +264,10 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`
+// Start server only if not in a serverless environment
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
 ║              KAFEDOMI SERVER RUNNING                      ║
@@ -275,17 +276,12 @@ app.listen(PORT, () => {
 ║  📧 API:       http://localhost:${PORT}/api                 ║
 ║  ✅ Status:    http://localhost:${PORT}/api/health          ║
 ║                                                           ║
-║  New Endpoints:                                           ║
-║  📦 Products:  /api/products?category=X&brand=Y           ║
-║  🏷️  Brands:   /api/brands                                 ║
-║  📂 Categories: /api/categories                           ║
-║                                                           ║
 ║  Environment: ${process.env.NODE_ENV || 'development'}                              ║
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
-    `);
-});
+        `);
+    });
+}
 
-module.exports = app;
 // Export for Vercel
 module.exports = app;
