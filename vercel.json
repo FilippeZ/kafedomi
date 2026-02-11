@@ -1,0 +1,47 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/server.js"
+        },
+        {
+            "src": "/(index.html|about.html|products.html|brands.html|water.html|product-detail.html|styles.css|script.js|common.js|products.js|products-page.js|product-detail.js|brands.js|water-page.js|site.webmanifest)",
+            "dest": "/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/images/$1"
+        },
+        {
+            "src": "/newimg/(.*)",
+            "dest": "/newimg/$1"
+        },
+        {
+            "src": "/officemachinesandbrnds/(.*)",
+            "dest": "/officemachinesandbrnds/$1"
+        },
+        {
+            "src": "/photo/(.*)",
+            "dest": "/photo/$1"
+        },
+        {
+            "src": "/water/(.*)",
+            "dest": "/water/$1"
+        },
+        {
+            "src": "/coffeevendingmachines/(.*)",
+            "dest": "/coffeevendingmachines/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
