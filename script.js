@@ -145,8 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== LANGUAGE SWITCHING =====
+// Note: If common.js is loaded, it handles language switching.
+// This is a fallback for pages that don't use common.js
+
 class LanguageManager {
     constructor() {
+        // Check if common.js has already initialized language
+        if (window.updateLanguageContent) {
+            this.currentLang = localStorage.getItem('kafedomi_lang') || 'en';
+            return; // Let common.js handle it
+        }
+
         this.currentLang = localStorage.getItem('kafedomi_lang') || 'en';
         this.init();
     }
@@ -193,61 +202,37 @@ class LanguageManager {
         elements.forEach(el => {
             const content = el.dataset[this.currentLang];
             if (content) {
-                // If it's an input/textarea with placeholder, update placeholder
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                     if (el.hasAttribute('placeholder')) {
                         el.placeholder = content;
                     }
-                } else if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
-                    // If it's a simple text node, update text content
-                    el.textContent = content;
                 } else {
-                    // Start finding the text node to replace or update safely
-                    // For now, if it has children (like icons), we might need a safer way
-                    // Simplest for this project: update textContent if it looks like just text,
-                    // or look for specific structure.
-                    // Let's assume most are simple text. Bypassing icon issue:
-                    // If element has icon, we shouldn't wipe it.
-                    // Check if there is a 'text' span wrapper? No.
-                    // Fallback: If it has SVGs/Icons, we might break it.
-                    // Let's check if the element has children that are tags.
-                    const hasTags = Array.from(el.children).length > 0;
-                    if (!hasTags) {
+                    const hasChildElements = el.children.length > 0;
+                    if (!hasChildElements) {
                         el.textContent = content;
                     } else {
-                        // Complex element (e.g. valid svg check). 
-                        // For this specific website, let's try to just update the text node if possible.
-                        // Or finding a specific class.
-                        // Actually, looking at the HTML, most localized elements are direct text containers.
-                        // Some buttons have icons?
-                        // "Request a Quote" button has no icon in index.html line 61.
-                        // "Discover Our Solutions" button has no icon.
-                        const textNode = Array.from(el.childNodes).find(node => node.nodeType === 3 && node.textContent.trim().length > 0);
+                        const textNode = Array.from(el.childNodes).find(
+                            node => node.nodeType === 3 && node.textContent.trim().length > 0
+                        );
                         if (textNode) {
                             textNode.textContent = content;
-                        } else {
-                            // If mixed content, might need innerHTML manual reconstruction or spans.
-                            // For now, textContent safe for 90%
-                            // Recover icon? 
-                            // Let's just use textContent as previously implemented in other files.
-                            // If we break icons, we will fix.
-                            // Previous implementation in script.js used updateContent() logic?
-                            // No, I am rewriting it now.
-                            // Let's stick to simple textContent unless we know it breaks icons.
-                            el.textContent = content;
                         }
                     }
                 }
             }
         });
 
-        // Update HTML lang attribute
         document.documentElement.lang = this.currentLang;
+        window.currentLang = this.currentLang;
     }
 }
 
-// Initialize language manager
-window.languageManager = new LanguageManager();
+// Initialize language manager only if common.js hasn't done it
+setTimeout(() => {
+    if (!window.updateLanguageContent) {
+        window.languageManager = new LanguageManager();
+    }
+}, 100);
 
 // ===== SCROLL REVEAL =====
 const revealObserver = new IntersectionObserver((entries) => {
@@ -304,27 +289,41 @@ if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        // Safe language detection
+        const getLang = () => window.currentLang || (window.languageManager && window.languageManager.currentLang) || localStorage.getItem('kafedomi_lang') || 'en';
+        const currentLang = getLang();
+
         const btn = contactForm.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
-        btn.textContent = window.languageManager.currentLang === 'en' ? 'Sending...' : 'Αποστολή...';
+        btn.textContent = currentLang === 'en' ? 'Sending...' : 'Αποστολή...';
         btn.disabled = true;
 
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData.entries());
+        data.language = currentLang;
 
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-            // Show success message
-            alert(window.languageManager.currentLang === 'en'
-                ? 'Message sent successfully! We will contact you soon.'
-                : 'Το μήνυμα εστάλη επιτυχώς! Θα επικοινωνήσουμε μαζί σας σύντομα.');
-            contactForm.reset();
+            const result = await response.json();
+
+            if (result.success) {
+                alert(result.message);
+                contactForm.reset();
+            } else {
+                throw new Error(result.message);
+            }
         } catch (error) {
-            alert(window.languageManager.currentLang === 'en'
+            console.error('Form submission error:', error);
+            alert(error.message || (currentLang === 'en'
                 ? 'Error sending message. Please try again.'
-                : 'Σφάλμα κατά την αποστολή. Παρακαλώ προσπαθήστε ξανά.');
+                : 'Σφάλμα κατά την αποστολή. Παρακαλώ προσπαθήστε ξανά.'));
         } finally {
             btn.textContent = originalText;
             btn.disabled = false;

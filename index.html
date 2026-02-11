@@ -4,71 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kafedomi - Premium Vending Solutions</title>
+    <title>Kafedomi - Premium Vending Machines</title>
+    <meta property="og:title" content="Kafedomi - Premium Vending Machines">
+    <meta property="og:description"
+        content="Premium Vending Solutions for Greek Businesses. Coffee, Snacks, Drinks, and Water with 24/7 Support.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-    <!-- Header & Navigation -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">
-                <img src="logo.png" alt="Kafedomi Logo">
-                <span class="logo-text">KAFEDOMI</span>
-            </a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item has-dropdown">
-                        <a href="#" class="nav__link" data-en="Vending" data-gr="Vending">Vending</a>
-                        <div class="dropdown-menu">
-                            <a href="products.html?category=snacks" data-en="Snacks" data-gr="Σνακ">Snacks</a>
-                            <a href="products.html?category=drinks" data-en="Drinks" data-gr="Ποτά">Drinks</a>
-                            <a href="products.html?category=combo" data-en="Food" data-gr="Φαγητό">Food</a>
-                        </div>
-                    </li>
-                    <li class="nav__item has-dropdown">
-                        <a href="#" class="nav__link" data-en="Coffee & Hot Drinks"
-                            data-gr="Καφές & Ζεστά Ροφήματα">Coffee & Hot Drinks</a>
-                        <div class="dropdown-menu">
-                            <a href="products.html?category=coffee" data-en="Office Machines"
-                                data-gr="Μηχανές Γραφείου">Office Machines</a>
-                            <a href="products.html?category=coffee" data-en="Commercial"
-                                data-gr="Εμπορικές">Commercial</a>
-                        </div>
-                    </li>
-                    <li class="nav__item">
-                        <a href="products.html?category=water" class="nav__link" data-en="Water"
-                            data-gr="Νερό">Water</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#sectors" class="nav__link" data-en="Services" data-gr="Υπηρεσίες">Services</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="nav__actions">
-                <div class="language-toggle">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="gr">GR</button>
-                </div>
-                <button class="btn btn-primary btn-cta" data-en="Request a Quote" data-gr="Ζητήστε Προσφορά">Request a
-                    Quote</button>
-            </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Shared Navigation Container -->
+    <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -78,7 +35,7 @@
             </div>
             <div class="hero__overlay"></div>
         </div>
-        <div class="hero__content container">
+        <div class="hero__content">
             <h1 class="hero__title" data-en="Elevating the Breakroom Experience."
                 data-gr="Αναβαθμίζοντας την Εμπειρία του Διαλείμματος.">
                 Elevating the Breakroom Experience.
@@ -87,9 +44,10 @@
                 data-gr="Έξυπνες λύσεις vending για τον σύγχρονο χώρο εργασίας">
                 Smart vending solutions for the modern workplace
             </p>
-            <button class="btn btn-hero" data-en="Discover Our Solutions" data-gr="Ανακαλύψτε τις Λύσεις μας">
+            <a href="products.html" class="btn btn-hero" data-en="Discover Our Solutions"
+                data-gr="Ανακαλύψτε τις Λύσεις μας">
                 Discover Our Solutions
-            </button>
+            </a>
         </div>
         <div class="hero__scroll">
             <span data-en="Scroll to explore" data-gr="Κάντε scroll για εξερεύνηση">Scroll to explore</span>
@@ -97,9 +55,10 @@
     </section>
 
     <!-- Target Sectors -->
-    <section class="sectors" id="sectors">
+    <section class="sectors reveal" id="sectors">
         <div class="container">
             <div class="section-header">
+                <span class="section-label" data-en="Our Reach" data-gr="Η Εμβέλειά μας">Our Reach</span>
                 <h2 class="section-title" data-en="Where We Serve" data-gr="Που Εξυπηρετούμε">Where We Serve</h2>
                 <p class="section-subtitle" data-en="Tailored solutions for every industry"
                     data-gr="Προσαρμοσμένες λύσεις για κάθε κλάδο">
@@ -108,7 +67,7 @@
             </div>
 
             <div class="sectors__grid">
-                <div class="sector-card reveal">
+                <div class="sector-card reveal" style="transition-delay: 0.1s;">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -122,7 +81,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card reveal">
+                <div class="sector-card reveal" style="transition-delay: 0.2s;">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -136,7 +95,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card reveal">
+                <div class="sector-card reveal" style="transition-delay: 0.3s;">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path
@@ -153,7 +112,7 @@
                     </p>
                 </div>
 
-                <div class="sector-card reveal">
+                <div class="sector-card reveal" style="transition-delay: 0.4s;">
                     <div class="sector-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -169,130 +128,208 @@
         </div>
     </section>
 
-    <!-- Product Pillars -->
+    <!-- What We Offer Section (Redesigned) -->
     <section class="products" id="products">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="What We Offer" data-gr="Τι Προσφέρουμε">What We Offer</h2>
-                <p class="section-subtitle" data-en="Premium quality in every category"
-                    data-gr="Premium ποιότητα σε κάθε κατηγορία">
-                    Premium quality in every category
-                </p>
+            <div class="section-header reveal">
+                <span class="water-badge" data-en="WHAT WE OFFER" data-gr="ΤΙ ΠΡΟΣΦΕΡΟΥΜΕ">WHAT WE OFFER</span>
+                <h2 class="section-title" data-en="Premium Quality in Every Category"
+                    data-gr="Κορυφαία Ποιότητα σε Κάθε Κατηγορία">Premium Quality in Every Category</h2>
             </div>
 
-            <div class="products__grid">
-                <!-- Vending Column -->
-                <div class="product-card reveal">
-                    <div class="product-card__image">
-                        <img src="images/vending_office.png" alt="Smart Vending Solutions">
+            <div class="products-stack">
+                <!-- Vending Solutions -->
+                <div class="product-card-premium reveal">
+                    <div class="product-card-premium__visual">
+                        <div class="product-card-premium__image-wrapper">
+                            <img src="images/fas_400.png" alt="Smart Vending Machine"
+                                class="product-card-premium__image">
+                        </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Vending Solutions" data-gr="Λύσεις Vending">Vending
-                            Solutions</h3>
-                        <p class="product-card__desc"
-                            data-en="Interactive touch-screen machines offering a wide range of fresh snacks, cold drinks, and healthy food options for the modern workplace."
-                            data-gr="Διαδραστικές μηχανές με οθόνη αφής που προσφέρουν μεγάλη γκάμα φρέσκων σνακ, κρύων ποτών και υγιεινών επιλογών φαγητού για τον σύγχρονο χώρο εργασίας.">
+                    <div class="product-card-premium__content">
+                        <span class="product-card-premium__category" data-en="Smart Vending Solutions"
+                            data-gr="Έξυπνες Λύσεις Vending">Smart Vending Solutions</span>
+                        <h3 class="product-card-premium__title" data-en="Vending Solutions" data-gr="Λύσεις Vending">
+                            Vending Solutions</h3>
+                        <p class="product-card-premium__desc"
+                            data-en="Interactive touch-screen machines offering a wide range of fresh snacks, cold drinks, and healthy food options, this include coffee, drink, snack vending machines."
+                            data-gr="Διαδραστικές μηχανές με οθόνη αφής που προσφέρουν μεγάλη γκάμα φρέσκων σνακ, κρύων ποτών και υγιεινών επιλογών, συμπεριλαμβανομένων μηχανημάτων καφέ, ποτών και σνακ.">
                             Interactive touch-screen machines offering a wide range of fresh snacks, cold drinks, and
-                            healthy food options for the modern workplace.
+                            healthy food options, this include coffee, drink, snack vending machines.
                         </p>
-                        <ul class="product-card__features">
-                            <li data-en="Cashless & Mobile payments" data-gr="Ανέπαφες & Mobile πληρωμές">Cashless &
-                                Mobile payments</li>
-                            <li data-en="Smart inventory tracking" data-gr="Έξυπνη παρακολούθηση αποθέματος">Smart
-                                inventory tracking</li>
-                            <li data-en="Energy efficient (Grade A++)" data-gr="Ενεργειακά αποδοτικό (A++)">Energy
-                                efficient (Grade A++)</li>
-                        </ul>
-                        <div class="product-card__footer">
-                            <a href="products.html?category=snacks" class="btn btn-secondary" data-en="Explore Vending"
-                                data-gr="Εξερευνήστε το Vending">Explore Vending</a>
+                        <div class="product-card-premium__features">
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                        <path d="M12 8v8"></path>
+                                        <path d="M8 12h8"></path>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Cashless & Mobile payments"
+                                    data-gr="Ανέπαφες & Mobile πληρωμές">Cashless & Mobile payments</span>
+                            </div>
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Smart inventory tracking"
+                                    data-gr="Έξυπνη παρακολούθηση αποθέματος">Smart inventory tracking</span>
+                            </div>
                         </div>
+                        <a href="products.html" class="btn btn-primary" data-en="Explore Vending"
+                            data-gr="Εξερευνήστε Vending">Explore Vending</a>
                     </div>
                 </div>
 
-                <!-- Coffee Column -->
-                <div class="product-card reveal">
-                    <div class="product-card__image">
-                        <img src="images/office_coffee.png" alt="Premium Coffee Systems">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Coffee & Hot Drinks" data-gr="Καφές & Ζεστά Ροφήματα">
-                            Coffee & Hot Drinks</h3>
-                        <p class="product-card__desc"
-                            data-en="Authentic Italian espresso and gourmet hot drinks with bean-to-cup technology designed for corporate excellence."
-                            data-gr="Αυθεντικός ιταλικός espresso και gourmet ζεστά ροφήματα με τεχνολογία bean-to-cup σχεδιασμένη για εταιρική αριστεία.">
-                            Authentic Italian espresso and gourmet hot drinks with bean-to-cup technology designed for
-                            corporate excellence.
-                        </p>
-                        <ul class="product-card__features">
-                            <li data-en="Fresh roasted beans" data-gr="Φρεσκοκαβουρδισμένοι κόκκοι">Fresh roasted beans
-                            </li>
-                            <li data-en="Professional milk frothing" data-gr="Επαγγελματικό αφρόγαλα">Professional milk
-                                frothing</li>
-                            <li data-en="Italian espresso technology" data-gr="Ιταλική τεχνολογία espresso">Italian
-                                espresso technology</li>
-                        </ul>
-                        <div class="product-card__footer">
-                            <a href="products.html?category=coffee" class="btn btn-secondary" data-en="Explore Coffee"
-                                data-gr="Εξερευνήστε τον Καφέ">Explore Coffee</a>
+                <!-- Coffee Systems -->
+                <div class="product-card-premium reveal">
+                    <div class="product-card-premium__visual">
+                        <div class="product-card-premium__image-wrapper">
+                            <img src="images/illy Mitaca Smart30 Coffee Machine.jpg" alt="illy Mitaca Smart30"
+                                class="product-card-premium__image">
                         </div>
+                    </div>
+                    <div class="product-card-premium__content">
+                        <span class="product-card-premium__category" data-en="Premium Coffee Systems"
+                            data-gr="Premium Συστήματα Καφέ">Premium Coffee Systems</span>
+                        <h3 class="product-card-premium__title" data-en="Office Coffee" data-gr="Καφές για το Γράφειο">
+                            Office Coffee</h3>
+                        <p class="product-card-premium__desc"
+                            data-en="Premium coffee solutions and top-tier brands for offices, featuring authentic espresso experiences and gourmet hot drinks."
+                            data-gr="Κορυφαίες λύσεις καφέ και επώνυμα brands για γραφεία, με αυθεντικές εμπειρίες espresso και gourmet ζεστά ροφήματα.">
+                            Premium coffee solutions and top-tier brands for offices, featuring authentic espresso
+                            experiences and gourmet hot drinks.
+                        </p>
+                        <div class="product-card-premium__features">
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Fresh roasted beans"
+                                    data-gr="Φρεσκοκαβουρδισμένοι κόκκοι">Fresh roasted beans</span>
+                            </div>
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Professional milk frothing"
+                                    data-gr="Επαγγελματικό αφρόγαλα">Professional milk frothing</span>
+                            </div>
+                        </div>
+                        <a href="brands.html" class="btn btn-primary" data-en="Explore Coffee"
+                            data-gr="Εξερευνήστε Καφέ">Explore Coffee</a>
                     </div>
                 </div>
 
-                <!-- Water Column -->
-                <div class="product-card reveal">
-                    <div class="product-card__image">
-                        <img src="images/water_system.png" alt="Pure Water Solutions">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Water Solutions" data-gr="Λύσεις Νερού">Water Solutions
-                        </h3>
-                        <p class="product-card__desc"
-                            data-en="High-performance filtration systems providing chilled, sparkling, and alkaline water for demanding corporate environments."
-                            data-gr="Συστήματα φιλτραρίσματος υψηλής απόδοσης που παρέχουν κρύο, ανθρακούχο και αλκαλικό νερό για απαιτητικά εταιρικά περιβάλλοντα.">
-                            High-performance filtration systems providing chilled, sparkling, and alkaline water for
-                            demanding corporate environments.
-                        </p>
-                        <ul class="product-card__features">
-                            <li data-en="Contactless dispensing" data-gr="Ανέπαφη παροχή">Contactless dispensing</li>
-                            <li data-en="Advanced UV-C sterilization" data-gr="Προηγμένη αποστείρωση UV-C">Advanced UV-C
-                                sterilization</li>
-                            <li data-en="Sustainable & eco-friendly" data-gr="Βιώσιμο & οικολογικό">Sustainable &
-                                eco-friendly</li>
-                        </ul>
-                        <div class="product-card__footer">
-                            <a href="products.html?category=water" class="btn btn-secondary" data-en="Explore Water"
-                                data-gr="Εξερευνήστε το Νερό">Explore Water</a>
+                <!-- Water Solutions -->
+                <div class="product-card-premium reveal">
+                    <div class="product-card-premium__visual">
+                        <div class="product-card-premium__image-wrapper">
+                            <img src="images/hc66l-inox.png" alt="Vikos Premium Water"
+                                class="product-card-premium__image">
                         </div>
+                    </div>
+                    <div class="product-card-premium__content">
+                        <span class="product-card-premium__category" data-en="Pure Water Solutions"
+                            data-gr="Λύσεις Αγνού Νερού">Pure Water Solutions</span>
+                        <h3 class="product-card-premium__title" data-en="Water Solutions" data-gr="Λύσεις Νερού">Water
+                            Solutions</h3>
+                        <p class="product-card-premium__desc"
+                            data-en="High-performance filtration systems providing chilled, sparkling, and alkaline water."
+                            data-gr="Συστήματα φιλτραρίσματος υψηλής απόδοσης που παρέχουν κρύο, ανθρακούχο και αλκαλικό νερό.">
+                            High-performance filtration systems providing chilled, sparkling, and alkaline water.
+                        </p>
+                        <div class="product-card-premium__features">
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Contactless dispensing"
+                                    data-gr="Ανέπαφη παροχή">Contactless dispensing</span>
+                            </div>
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Advanced UV-C sterilization"
+                                    data-gr="Προηγμένη αποστείρωση UV-C">Advanced UV-C sterilization</span>
+                            </div>
+                        </div>
+                        <a href="water.html" class="btn btn-primary" data-en="Explore Water"
+                            data-gr="Εξερευνήστε Νερό">Explore Water</a>
                     </div>
                 </div>
 
-                <!-- Services/Sectors Section -->
-                <div class="product-card reveal">
-                    <div class="product-card__image">
-                        <img src="images/service_team.png" alt="Technical Support & Service">
+                <!-- Full Service (Car) -->
+                <div class="product-card-premium reveal" data-delay="0.4s">
+                    <div class="product-card-premium__visual">
+                        <div class="product-card-premium__image-wrapper">
+                            <img src="images/service_car.png" alt="Service Vehicle"
+                                class="product-card-premium__image product-card-premium__image--car">
+                        </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" data-en="Full Service" data-gr="Πλήρης Υποστήριξη">Full Service
-                        </h3>
-                        <p class="product-card__desc"
-                            data-en="Comprehensive maintenance and rapid technical support to ensure your machines are always operational."
-                            data-gr="Ολοκληρωμένη συντήρηση και ταχεία τεχνική υποστήριξη για να διασφαλιστεί ότι οι μηχανές σας λειτουργούν πάντα.">
-                            Comprehensive maintenance and rapid technical support to ensure your machines are always
+                    <div class="product-card-premium__content">
+                        <span class="product-card-premium__category" data-en="Technical Support & Service"
+                            data-gr="Τεχνική Υποστήριξη & Service">Technical Support & Service</span>
+                        <h3 class="product-card-premium__title" data-en="Full Service" data-gr="Πλήρης Υποστήριξη">Full
+                            Service</h3>
+                        <p class="product-card-premium__desc"
+                            data-en="Comprehensive maintenance and rapid technical support to ensure your machines are operational."
+                            data-gr="Ολοκληρωμένη συντήρηση και ταχεία τεχνική υποστήριξη για την εύρυθμη λειτουργία των μηχανών σας.">
+                            Comprehensive maintenance and rapid technical support to ensure your machines are
                             operational.
                         </p>
-                        <ul class="product-card__features">
-                            <li data-en="Technical Support 24/7" data-gr="Τεχνική Υποστήριξη 24/7">Technical Support
-                                24/7</li>
-                            <li data-en="Predictive maintenance" data-gr="Προληπτική συντήρηση">Predictive maintenance
-                            </li>
-                            <li data-en="Certified technicians" data-gr="Πιστοποιημένοι τεχνικοί">Certified technicians
-                            </li>
-                        </ul>
-                        <div class="product-card__footer">
-                            <a href="#sectors" class="btn btn-secondary" data-en="Our Services"
-                                data-gr="Οι Υπηρεσίες μας">Our Services</a>
+                        <div class="product-card-premium__features">
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Technical Support 24/7"
+                                    data-gr="Τεχνική Υποστήριξη 24/7">Technical Support 24/7</span>
+                            </div>
+                            <div class="product-feature">
+                                <div class="product-feature__icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="product-feature__text" data-en="Certified technicians"
+                                    data-gr="Πιστοποιημένοι τεχνικοί">Certified technicians</span>
+                            </div>
                         </div>
+                        <a href="about.html" class="btn btn-primary" data-en="About Service"
+                            data-gr="Σχετικά με Service">About Service</a>
                     </div>
                 </div>
             </div>
@@ -300,10 +337,11 @@
     </section>
 
     <!-- Kafedomi Advantage -->
-    <section class="advantage" id="solutions">
+    <section class="advantage reveal" id="solutions">
         <div class="container">
-            <div class="advantage__content">
+            <div class="advantage__grid">
                 <div class="advantage__text">
+                    <span class="section-label" data-en="The Difference" data-gr="Η Διαφορά">The Difference</span>
                     <h2 class="section-title" data-en="The Kafedomi Advantage" data-gr="Το Πλεονέκτημα Kafedomi">
                         The Kafedomi Advantage
                     </h2>
@@ -316,16 +354,17 @@
                         <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
                                 </svg>
                             </div>
                             <div class="advantage__feature-content">
-                                <h3 data-en="AI-Powered Inventory" data-gr="Διαχείριση Αποθέματος με AI">AI-Powered
-                                    Inventory</h3>
-                                <p data-en="Smart algorithms predict demand and optimize stock levels automatically."
-                                    data-gr="Έξυπνοι αλγόριθμοι προβλέπουν τη ζήτηση και βελτιστοποιούν τα επίπεδα αποθέματος αυτόματα.">
-                                    Smart algorithms predict demand and optimize stock levels automatically.
+                                <h3 data-en="Vending Excellence" data-gr="Αριστεία στο Vending">Vending Excellence</h3>
+                                <p data-en="Combining top-tier Italian engineering with local expertise to deliver the perfect break experience in every workplace."
+                                    data-gr="Συνδυάζουμε την κορυφαία ιταλική τεχνολογία με την τοπική εμπειρία για να προσφέρουμε την τέλεια εμπειρία διαλείμματος σε κάθε χώρο εργασίας.">
+                                    Combining top-tier Italian engineering with local expertise to deliver the perfect
+                                    break experience in every workplace.
                                 </p>
                             </div>
                         </div>
@@ -333,15 +372,18 @@
                         <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                                    <path d="M12 6v12"></path>
+                                    <path d="M8 14l4 4 4-4"></path>
                                 </svg>
                             </div>
                             <div class="advantage__feature-content">
-                                <h3 data-en="Cashless Payments" data-gr="Ανέπαφες Πληρωμές">Cashless Payments</h3>
-                                <p data-en="Accept cards, mobile payments, and digital wallets for seamless transactions."
-                                    data-gr="Δεχόμαστε κάρτες, mobile πληρωμές και ψηφιακά πορτοφόλια για απρόσκοπτες συναλλαγές.">
-                                    Accept cards, mobile payments, and digital wallets for seamless transactions.
+                                <h3 data-en="Pure Water Solutions" data-gr="Λύσεις Καθαρού Νερού">Pure Water Solutions
+                                </h3>
+                                <p data-en="Sourcing premium mineral water from pure springs to ensure health and hydration for your team and clients."
+                                    data-gr="Προμηθευόμαστε κορυφαίο μεταλλικό νερό από αγνές πηγές για να διασφαλίσουμε την υγεία και την ενυδάτωση της ομάδας και των πελατών σας.">
+                                    Sourcing premium mineral water from pure springs to ensure health and hydration for
+                                    your team and clients.
                                 </p>
                             </div>
                         </div>
@@ -349,48 +391,30 @@
                         <div class="advantage__feature reveal">
                             <div class="advantage__feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 11 11 13 15 9"></polyline>
                                 </svg>
                             </div>
                             <div class="advantage__feature-content">
-                                <h3 data-en="24/7 Technical Support" data-gr="24/7 Τεχνική Υποστήριξη">24/7 Technical
-                                    Support</h3>
-                                <p data-en="Round-the-clock monitoring and rapid response to keep your machines running."
-                                    data-gr="Παρακολούθηση όλο το 24ωρο και γρήγορη ανταπόκριση για να λειτουργούν οι μηχανές σας.">
-                                    Round-the-clock monitoring and rapid response to keep your machines running.
+                                <h3 data-en="Certified Reliability" data-gr="Πιστοποιημένη Αξιοπιστία">Certified
+                                    Reliability</h3>
+                                <p data-en="Rigorous maintenance protocols and quick-response technical teams ensure uninterrupted service for your business."
+                                    data-gr="Τα αυστηρά πρωτόκολλα συντήρησης και οι τεχνικές ομάδες γρήγορης ανταπόκρισης διασφαλίζουν την απρόσκοπτη εξυπηρέτηση της επιχείρησής σας.">
+                                    Rigorous maintenance protocols and quick-response technical teams ensure
+                                    uninterrupted service for your business.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="advantage__visual">
-                    <img src="Pictures/A_smooth_cinematic_202602061459_9wj0b_025.jpg" alt="Smart Technology"
-                        class="advantage__img">
-                    <div class="advantage__stats">
-                        <div class="stat-card">
-                            <span class="stat-number">99.8%</span>
-                            <span class="stat-label" data-en="Uptime" data-gr="Διαθεσιμότητα">Uptime</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label" data-en="Installations"
-                                data-gr="Εγκαταστάσεις">Installations</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">2Hr</span>
-                            <span class="stat-label" data-en="Response Time" data-gr="Χρόνος Απόκρισης">Response
-                                Time</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta" id="about">
+    <section class="cta" id="quote-section">
         <div class="container">
             <div class="cta__content">
                 <h2 class="cta__title" data-en="Ready to transform your space?"
@@ -405,22 +429,22 @@
                 <form class="cta__form" id="contact-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" id="name" required placeholder=" ">
+                            <input type="text" id="name" name="name" required placeholder=" ">
                             <label for="name" data-en="Full Name" data-gr="Ονοματεπώνυμο">Full Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="company" required placeholder=" ">
+                            <input type="text" id="company" name="company" required placeholder=" ">
                             <label for="company" data-en="Company Name" data-gr="Όνομα Εταιρείας">Company Name</label>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="tel" id="phone" required placeholder=" ">
+                            <input type="tel" id="phone" name="phone" required placeholder=" ">
                             <label for="phone" data-en="Phone Number" data-gr="Τηλέφωνο">Phone Number</label>
                         </div>
                         <div class="form-group">
-                            <select id="sector" required>
+                            <select id="sector" name="sector" required>
                                 <option value="" disabled selected></option>
                                 <option value="hotel" data-en="Hotel" data-gr="Ξενοδοχείο">Hotel</option>
                                 <option value="factory" data-en="Factory" data-gr="Εργοστάσιο">Factory</option>
@@ -434,13 +458,13 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="email" id="email" required placeholder=" ">
+                            <input type="email" id="email" name="email" required placeholder=" ">
                             <label for="email" data-en="Email Address" data-gr="Email">Email Address</label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <textarea id="message" rows="4" placeholder=" "></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder=" "></textarea>
                         <label for="message" data-en="Message (Optional)" data-gr="Μήνυμα (Προαιρετικό)">Message
                             (Optional)</label>
                     </div>
@@ -464,81 +488,37 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__content">
+            <div class="footer__grid">
                 <div class="footer__brand">
-                    <h3 class="footer__logo">KAFEDOMI</h3>
-                    <p class="footer__tagline" data-en="The architecture of the perfect break"
-                        data-gr="Η αρχιτεκτονική του τέλειου διαλείμματος">
-                        The architecture of the perfect break
-                    </p>
+                    <h3 class="footer__title">KAFEDOMI</h3>
+                    <p class="footer__desc" data-en="Your trusted partner for premium vending solutions"
+                        data-gr="Ο αξιόπιστος συνεργάτης σας για premium λύσεις vending">Your trusted partner for
+                        premium vending solutions</p>
                 </div>
-
                 <div class="footer__links">
-                    <div class="footer__column">
-                        <h4 data-en="Solutions" data-gr="Λύσεις">Solutions</h4>
-                        <ul>
-                            <li><a href="#" data-en="Hotels" data-gr="Ξενοδοχεία">Hotels</a></li>
-                            <li><a href="#" data-en="Factories" data-gr="Εργοστάσια">Factories</a></li>
-                            <li><a href="#" data-en="Companies" data-gr="Εταιρείες">Companies</a></li>
-                            <li><a href="#" data-en="Hospitals" data-gr="Νοσοκομεία">Hospitals</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__column">
-                        <h4 data-en="Products" data-gr="Προϊόντα">Products</h4>
-                        <ul>
-                            <li><a href="#" data-en="Coffee Machines" data-gr="Μηχανές Καφέ">Coffee Machines</a></li>
-                            <li><a href="#" data-en="Snack Vending" data-gr="Vending Σνακ">Snack Vending</a></li>
-                            <li><a href="#" data-en="Drink Coolers" data-gr="Ψυγεία Ποτών">Drink Coolers</a></li>
-                            <li><a href="#" data-en="Combo Units" data-gr="Συνδυαστικές Μονάδες">Combo Units</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__column">
-                        <h4 data-en="Company" data-gr="Εταιρεία">Company</h4>
-                        <ul>
-                            <li><a href="#" data-en="About Us" data-gr="Σχετικά">About Us</a></li>
-                            <li><a href="#" data-en="Contact" data-gr="Επικοινωνία">Contact</a></li>
-                            <li><a href="#" data-en="Careers" data-gr="Καριέρα">Careers</a></li>
-                            <li><a href="#" data-en="Support" data-gr="Υποστήριξη">Support</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__column">
-                        <p><strong data-en="Contact" data-gr="Επικοινωνία">Contact</strong></p>
-                        <p data-en="Phone: +30 22310 12345" data-gr="Τηλέφωνο: +30 22310 12345">Phone: +30 22310 12345
-                        </p>
-                        <p data-en="Email: info@kafedomi.gr" data-gr="Email: info@kafedomi.gr">Email: info@kafedomi.gr
-                        </p>
-                        <p data-en="Location: Lamia, Fthiotida" data-gr="Τοποθεσία: Λαμία, Φθιώτιδα">Location: Lamia,
-                            Fthiotida</p>
-                        <p data-en="Serving all of Fthiotida region" data-gr="Εξυπηρετούμε όλο το νομό Φθιώτιδας">
-                            Serving all of Fthiotida region</p>
-                    </div>
+                    <h4 class="footer__subtitle" data-en="Quick Links" data-gr="Γρήγοροι Σύνδεσμοι">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-gr="Αρχική">Home</a></li>
+                        <li><a href="products.html" data-en="Products" data-gr="Προϊόντα">Products</a></li>
+                        <li><a href="water.html" data-en="Water Solutions" data-gr="Λύσεις Νερού">Water Solutions</a>
+                        </li>
+                        <li><a href="about.html" data-en="About Us" data-gr="Σχετικά με εμάς">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__subtitle" data-en="Contact" data-gr="Επικοινωνία">Contact</h4>
+                    <p>+30 22310 51340</p>
+                    <p>kafedomi@gmail.com</p>
                 </div>
             </div>
-
             <div class="footer__bottom">
-                <p data-en="© 2026 Kafedomi. All rights reserved. | Lamia, Fthiotida, Greece"
-                    data-gr="© 2026 Kafedomi. Με επιφύλαξη παντός δικαιώματος. | Λαμία, Φθιώτιδα, Ελλάδα">© 2026
-                    Kafedomi. All rights reserved. | Lamia, Fthiotida, Greece</p>
+                <p>&copy; 2026 Kafedomi. <span data-en="All rights reserved"
+                        data-gr="Όλα τα δικαιώματα διατηρούνται">All rights reserved</span>.</p>
                 <div class="footer__social">
-                    <a href="#" aria-label="LinkedIn">
+                    <a href="https://www.facebook.com/Kafedomh" target="_blank" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                         </svg>
                     </a>
                 </div>
@@ -546,6 +526,7 @@
         </div>
     </footer>
 
+    <script src="common.js"></script>
     <script src="script.js"></script>
 </body>
 

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafedomi - Premium Vending Machines</title>
+    <meta property="og:title" content="Office Coffee Solutions - Kafedomi Premium Vending">
+    <meta property="og:description" content="Premium office coffee solutions and brands. Lavazza, Illy, and more.">
+    <meta property="og:image" content="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Modern Premium Aesthetics */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --premium-gradient: linear-gradient(135deg, #1a1a1a 0%, #3d2b1f 100%);
+            --accent-gold: #c5a059;
+        }
+
+        body {
+            background-color: #fcfaf7;
+        }
+
+        /* Office Coffee Hero Refined */
+        .office-hero {
+            background: var(--premium-gradient);
+            padding: 180px 0 120px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .office-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .office-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .office-hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #fff, #c5a059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .office-hero p {
+            font-size: 1.35rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Section Title Redesigned */
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-header.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--color-dark-chocolate);
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--color-mocha);
+            border-radius: 2px;
+        }
+
+        /* Brand Items with Floating Animation */
+        .brands-section {
+            padding: 120px 0;
+            background: #fff;
+        }
+
+        .brand-item {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 5rem;
+            margin-bottom: 100px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .brand-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .brand-logo-card {
+            background: #fff;
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .brand-logo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(139, 69, 19, 0.02), transparent);
+            transform: translateX(-100%);
+            transition: 0.8s;
+        }
+
+        .brand-item:hover .brand-logo-card {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(139, 69, 19, 0.1);
+            border-color: var(--color-mocha);
+        }
+
+        .brand-item:hover .brand-logo-card::before {
+            transform: translateX(100%);
+        }
+
+        .brand-logo-card img {
+            max-width: 100%;
+            height: auto;
+            max-height: 140px;
+            transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .brand-item:nth-child(even) .brand-logo-card img {
+            animation-delay: 1s;
+        }
+
+        .brand-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-dark-chocolate);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .brand-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        /* Machines Showcase */
+        .machines-section {
+            padding: 120px 0;
+            background: #fbf8f5;
+        }
+
+        .machines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 4rem;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1100px) {
+            .brand-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .brand-logo-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .brand-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section class="office-hero">
+        <div class="container" id="reveal-hero">
+            <h1 data-en="The Ultimate Office Coffee Experience" data-gr="Η Κορυφαία Εμπειρία Καφέ στο Γραφείο">The
+                Ultimate Office Coffee Experience</h1>
+            <p data-en="Elevate your morning ritual with globally recognized brands and elite brewing technology."
+                data-gr="Αναβαθμίστε την πρωινή σας συνήθεια με παγκοσμίως αναγνωρισμένες μάρκες και κορυφαία τεχνολογία παρασκευής.">
+                Elevate your morning ritual with globally recognized brands and elite brewing technology.
+            </p>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" data-en="Brands of Distinction" data-gr="Μάρκες με Διάκριση">Brands of
+                    Distinction</h2>
+            </div>
+
+            <div id="brands-scroll-container">
+                <!-- illy -->
+                <div class="brand-item reveal">
+                    <div class="brand-logo-card">
+                        <img src="images/illy-LOGO.jpg" alt="illy">
+                    </div>
+                    <div class="brand-content">
+                        <h3>illy: The Art of 100% Arabica</h3>
+                        <p>Founded in Trieste in 1933, Illy has built a global reputation on a singular, high-end
+                            pursuit: the perfect 100% Arabica blend. As the premium choice for hospitality and artistic
+                            environments, Illy creates a consistent, velvety espresso with complex aromatic notes.</p>
+                    </div>
+                </div>
+
+                <!-- Lavazza -->
+                <div class="brand-item reveal">
+                    <div class="brand-logo-card">
+                        <img src="images/Lavazza-Logo.png" alt="Lavazza">
+                    </div>
+                    <div class="brand-content">
+                        <h3>Lavazza: Italy’s Versatile Coffee Giant</h3>
+                        <p>Since 1895, Lavazza has remained a family-owned powerhouse that dominates both the home and
+                            corporate sectors. The undisputed king of the corporate world through its Lavazza BLUE
+                            capsule system, providing a robust, consistent product that is both affordable and highly
+                            accessible.</p>
+                    </div>
+                </div>
+
+                <!-- Nespresso -->
+                <div class="brand-item reveal">
+                    <div class="brand-logo-card">
+                        <img src="images/nespresso.png" alt="Nespresso">
+                    </div>
+                    <div class="brand-content">
+                        <h3>Nespresso: The Luxury Capsule Pioneer</h3>
+                        <p>Nespresso revolutionized the industry by bringing the boutique espresso experience directly
+                            into the office. Known for its high-pressure extraction and extensive range of single-origin
+                            pods, it prioritizes convenience without ever sacrificing luxury.</p>
+                    </div>
+                </div>
+
+                <!-- Dolce Gusto -->
+                <div class="brand-item reveal">
+                    <div class="brand-logo-card">
+                        <img src="images/dolce gusto-logo.png" alt="Dolce Gusto">
+                    </div>
+                    <div class="brand-content">
+                        <h3>Dolce Gusto: Creative Versatility</h3>
+                        <p>The "fun and versatile" alternative for diverse office tastes. From classic espressos to
+                            creative lattes and even non-coffee beverages, it's the ideal all-in-one solution for teams
+                            that value variety and modern design.</p>
+                    </div>
+                </div>
+
+                <!-- Nescafe -->
+                <div class="brand-item reveal">
+                    <div class="brand-logo-card">
+                        <img src="images/Nescafe-logo.jpg" alt="Nescafe">
+                    </div>
+                    <div class="brand-content">
+                        <h3>Nescafe: The Professional Standard</h3>
+                        <p>A global icon of reliability. Perfect for high-traffic environments where quality and speed
+                            are essential. Nescafé provides the professional scale that modern businesses demand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="machines-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" data-en="Elite Office Machines" data-gr="Elite Μηχανές Γραφείου">Elite Office
+                    Machines</h2>
+            </div>
+            <div class="machines-grid" id="office-machines-grid">
+                <!-- Loaded via JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <h3 class="footer__title">KAFEDOMI</h3>
+                    <p class="footer__desc" data-en="Your trusted partner for premium vending solutions"
+                        data-gr="Ο αξιόπιστος συνεργάτης σας για premium λύσεις vending">Your trusted partner for
+                        premium vending solutions</p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__subtitle" data-en="Quick Links" data-gr="Γρήγοροι Σύνδεσμοι">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-gr="Αρχική">Home</a></li>
+                        <li><a href="products.html" data-en="Products" data-gr="Προϊόντα">Products</a></li>
+                        <li><a href="water.html" data-en="Water Solutions" data-gr="Λύσεις Νερού">Water Solutions</a>
+                        </li>
+                        <li><a href="about.html" data-en="About Us" data-gr="Σχετικά με εμάς">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__subtitle" data-en="Contact" data-gr="Επικοινωνία">Contact</h4>
+                    <p>+30 22310 51340</p>
+                    <p>kafedomi@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Kafedomi. <span data-en="All rights reserved"
+                        data-gr="Όλα τα δικαιώματα διατηρούνται">All rights reserved</span>.</p>
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/Kafedomh" target="_blank" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="products.js"></script>
+    <script src="brands.js"></script>
+    <script>
+        // Intersection Observer for Scroll Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(reveal => observer.observe(reveal));
+        });
+    </script>
+</body>
+
+</html>

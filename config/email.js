@@ -10,6 +10,9 @@ const createTransporter = () => {
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS
+        },
+        tls: {
+            rejectUnauthorized: false // Fixes "self-signed certificate in certificate chain" errors
         }
     });
 };
@@ -203,7 +206,7 @@ const emailTemplates = {
                         
                         <p><strong>Contact Information:</strong><br>
                         📍 Lamia, Fthiotida, Greece<br>
-                        📞 +30 22310 12345<br>
+                        📞 +30 22310 51340<br>
                         ✉️ info@kafedomi.gr</p>
                     </div>
                     <div class="footer">
@@ -249,7 +252,7 @@ const emailTemplates = {
                         
                         <p><strong>Στοιχεία Επικοινωνίας:</strong><br>
                         📍 Λαμία, Φθιώτιδα, Ελλάδα<br>
-                        📞 +30 22310 12345<br>
+                        📞 +30 22310 51340<br>
                         ✉️ info@kafedomi.gr</p>
                     </div>
                     <div class="footer">
@@ -277,11 +280,12 @@ const sendEmail = async (to, subject, html) => {
     };
 
     try {
+        console.log(`📧 Sending email to: ${to} (Subject: ${subject})`);
         const info = await transporter.sendMail(mailOptions);
-        console.log('Email sent:', info.messageId);
+        console.log('✨ Email delivered:', info.messageId);
         return { success: true, messageId: info.messageId };
     } catch (error) {
-        console.error('Error sending email:', error);
+        console.error('🔥 Nodemailer Error:', error.message);
         throw error;
     }
 };
@@ -292,7 +296,7 @@ const sendContactFormEmails = async (formData, language = 'en') => {
         // Send notification to company
         const companyEmail = emailTemplates.companyNotification(formData, language);
         await sendEmail(
-            process.env.RECIPIENT_EMAIL || 'info@kafedomi.gr',
+            process.env.RECIPIENT_EMAIL || 'wwefilip57@gmail.com',
             companyEmail.subject,
             companyEmail.html
         );

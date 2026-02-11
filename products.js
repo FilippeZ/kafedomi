@@ -1,73 +1,190 @@
-// Product data for Kafedomi vending machines
+﻿// Product data for Kafedomi vending machines
 const products = [
+    // ===== COFFEE VENDING MACHINES =====
     {
-        id: 'coffee-premium-bean',
-        category: 'coffee',
+        id: 'coffee-necta-astro',
+        category: 'vending-coffee',
+        type: 'floor-standing',
+        brand: 'necta',
         name: {
-            en: 'Premium Bean-to-Cup Coffee Machine',
-            gr: 'Μηχανή Καφέ Premium Bean-to-Cup'
+            en: 'Necta Astro',
+            gr: 'Necta Astro'
         },
         description: {
-            en: 'Professional bean-to-cup coffee machine delivering barista-quality espresso, cappuccino, and specialty drinks. Perfect for offices and hotels demanding premium coffee experiences.',
-            gr: 'Επαγγελματική μηχανή καφέ bean-to-cup που προσφέρει espresso, cappuccino και ειδικά ροφήματα ποιότητας barista. Ιδανική για γραφεία και ξενοδοχεία που απαιτούν premium εμπειρία καφέ.'
+            en: 'A winning solution for medium to large locations. Offers 18 direct selections and an innovative design that meets the expectations of the most demanding customers.',
+            gr: 'Μια κερδοφόρα λύση για μεσαίους και μεγάλους χώρους. Προσφέρει 18 άμεσες επιλογές και καινοτόμο σχεδιασμό που ανταποκρίνεται στις προσδοκίες των πιο απαιτητικών πελατών.'
         },
         features: {
-            en: [
-                'Freshly ground beans for every cup',
-                'Customizable strength and temperature',
-                'Multiple drink varieties (Espresso, Cappuccino, Latte)',
-                'Touch screen interface',
-                'Automatic cleaning system',
-                'Energy-saving mode'
-            ],
-            gr: [
-                'Φρεσκοαλεσμένα κόκκοι για κάθε φλιτζάνι',
-                'Προσαρμόσιμη ένταση και θερμοκρασία',
-                'Πολλαπλές ποικιλίες ροφημάτων (Espresso, Cappuccino, Latte)',
-                'Οθόνη αφής',
-                'Αυτόματο σύστημα καθαρισμού',
-                'Λειτουργία εξοικονόμησης ενέργειας'
-            ]
+            en: ['Customizable drink menu', 'Z3000 coffee brewer', 'Cup sensor for guaranteed vend', '18 direct selections', 'Display screen progress bar'],
+            gr: ['Προσαρμόσιμο μενού ροφημάτων', 'Z3000 coffee brewer', 'Αισθητήρας κυπέλλου', '18 άμεσες επιλογές', 'Μπάρα προόδου στην οθόνη']
         },
         specifications: {
-            capacity: '2.5kg beans, 4L water',
-            dimensions: '60cm x 70cm x 180cm',
-            power: '2.4kW',
-            cupsPerDay: '200-300'
+            capacity: '650 cups, 575 stirrers',
+            dimensions: '183cm x 65cm x 74.2cm',
+            power: '2400 W',
+            weight: '180 kg'
         },
         images: [
-            'images/bandicam 2026-02-06 15-10-48-672.jpg',
-            'images/bandicam 2026-02-06 15-10-52-453.jpg'
+            'images/necta-astro.jpg'
         ]
     },
     {
-        id: 'snack-combo-deluxe',
-        category: 'snacks',
+        id: 'coffee-necta-brio',
+        category: 'vending-coffee',
+        type: 'floor-standing',
+        brand: 'necta',
         name: {
-            en: 'Deluxe Snack & Food Vending Machine',
-            gr: 'Deluxe Μηχανή Αυτόματης Πώλησης Σνακ & Τροφίμων'
+            en: 'Necta Brio',
+            gr: 'Necta Brio'
+        },
+        description: {
+            en: 'The evolution of a winner. Brio offers higher capacity and new features in a compact size, perfectly meeting latest consumer requirements.',
+            gr: 'Η εξέλιξη ενός νικητή. Το Brio προσφέρει μεγαλύτερη χωρητικότητα και νέα χαρακτηριστικά σε συμπαγές μέγεθος, καλύπτοντας απόλυτα τις τελευταίες απαιτήσεις των καταναλωτών.'
+        },
+        features: {
+            en: ['14 direct selections', 'Z3000 Espresso brewer', '300 cups capacity', '16-bit electronic control', 'Master/slave connection'],
+            gr: ['14 άμεσες επιλογές', 'Z3000 Espresso brewer', 'Χωρητικότητα 300 κύπελλα', 'Ηλεκτρονικός έλεγχος 16-bit', 'Σύνδεση Master/slave']
+        },
+        specifications: {
+            capacity: '300 cups',
+            dimensions: '76cm x 54cm x 58.5cm',
+            power: '1.5kW',
+            type: 'Tabletop-capable'
+        },
+        images: [
+            'images/necta-brio.jpg'
+        ]
+    },
+    {
+        id: 'coffee-necta-kikko',
+        category: 'vending-coffee',
+        type: 'floor-standing',
+        brand: 'necta',
+        name: {
+            en: 'Necta Kikko',
+            gr: 'Necta Kikko'
+        },
+        description: {
+            en: 'Simplicity, reliability, and versatility. Kikko is suitable for any professional location desiring an uncomplicated and dependable hot drink vending solution.',
+            gr: 'Απλότητα, αξιοπιστία και ευελιξία. Το Kikko είναι κατάλληλο για κάθε επαγγελματικό χώρο που επιθυμεί μια εύκολη και αξιόπιστη λύση αυτόματης πώλησης ζεστών ροφημάτων.'
+        },
+        features: {
+            en: ['16 direct selections', 'Z3000 coffee/leaf tea brewer', 'Ergonomic dispensing bay', 'Sleek and professional design', '16-bit electronics'],
+            gr: ['16 άμεσες επιλογές', 'Z3000 coffee/leaf tea brewer', 'Εργονομική θυρίδα παραλαβής', 'Κομψός και επαγγελματικός σχεδιασμός', 'Ηλεκτρονικά 16-bit']
+        },
+        specifications: {
+            capacity: '500 cups',
+            dimensions: '170cm x 54cm x 69cm',
+            power: '1.8kW',
+            electronics: '16-bit'
+        },
+        images: [
+            'images/necta-kikko.jpg',
+            'images/necta-kikko-2.png',
+            'images/necta-kikko-3.png'
+        ]
+    },
+    {
+        id: 'coffee-fas-400',
+        category: 'vending-coffee',
+        type: 'floor-standing',
+        brand: 'illy',
+        name: {
+            en: 'FAS 400',
+            gr: 'FAS 400'
+        },
+        description: {
+            en: 'The ideal solution for companies of all sizes. A true point of reference for the company break with its elegant design and advanced features.',
+            gr: 'Η ιδανική λύση για εταιρείες όλων των μεγεθών. Ένα πραγματικό σημείο αναφοράς για το διάλειμμα της εταιρείας με τον κομψό του σχεδιασμό και τα προηγμένα χαρακτηριστικά του.'
+        },
+        features: {
+            en: ['Capsule Container (250 pods)', '4 soluble containers', 'Sugar container', 'Up to 400 cups', 'Simple diameter adjustment'],
+            gr: ['Θήκη για Κάψουλες (250 κάψουλες)', '4 κάνιστρα στιγμιαίων', 'Κάνιστρο ζάχαρης', 'Έως 400 κύπελλα', 'Απλή ρύθμιση διαμέτρου κυπέλλου']
+        },
+        specifications: {
+            capacity: '400 cups, 250 capsules',
+            dimensions: '53cm x 58cm x 170cm',
+            power: '230 V, 50 Hz',
+            weight: '110 kg'
+        },
+        images: [
+            'images/fas-400.png',
+            'images/fas-400-2.jpg'
+        ]
+    },
+    {
+        id: 'coffee-illy-mitaca-smart30',
+        category: 'coffee-capsule',
+        type: 'tabletop',
+        brand: 'illy',
+        name: {
+            en: 'illy Mitaca Smart30',
+            gr: 'illy Mitaca Smart30'
+        },
+        description: {
+            en: 'Compact Italian design meets professional performance. The Smart30 is the perfect solution for small to medium offices (up to 20 people) looking for the authentic illy experience.',
+            gr: 'Ο συμπαγής ιταλικός σχεδιασμός συναντά την επαγγελματική απόδοση. Το Smart30 είναι η τέλεια λύση για μικρά έως μεσαία γραφεία (έως 20 άτομα) που αναζητούν την αυθεντική εμπειρία illy.'
+        },
+        features: {
+            en: ['Auto stop functionality', '2 programmable doses', 'Adjustable rack height', '2.5L water tank', 'Large capsule drawer (25 pods)'],
+            gr: ['Λειτουργία Auto stop', '2 προγραμματιζόμενες δόσεις', 'Ρυθμιζόμενο ύψος σχάρας', 'Δοχείο νερού 2,5 λίτρων', 'Μεγάλο συρτάρι καψουλών (25 κάψουλες)']
+        },
+        specifications: {
+            capacity: '2.5L water, 25 capsules',
+            dimensions: '15cm x 38cm x 28.5cm',
+            weight: '4.4 kg',
+            origin: 'Made in Italy'
+        },
+        images: [
+            'images/illy Mitaca Smart30 Coffee Machine.jpg'
+        ]
+    },
+    {
+        id: 'coffee-lavazza-blue',
+        category: 'coffee-capsule',
+        type: 'tabletop',
+        brand: 'lavazza',
+        name: {
+            en: 'Lavazza BLUE',
+            gr: 'Lavazza BLUE'
+        },
+        description: {
+            en: 'Premium coffee quality for your office. Lavazza BLUE meets individual requirements with a wide variety of coffees and delicious hot chocolate options.',
+            gr: 'Ποιότητα premium καφέ για το γραφείο σας. Το Lavazza BLUE καλύπτει τις ατομικές απαιτήσεις με μεγάλη ποικιλία καφέδων και επιλογές ζεστής σοκολάτας.'
+        },
+        features: {
+            en: ['High Pressure Extraction', 'Superior Crema', 'Pre-Infusion brewing', 'Thermoblock temp control', 'Self-Protected Capsules'],
+            gr: ['Εκχύλιση υψηλής πίεσης', 'Ανώτερη κρέμα', 'Προ-έγχυση αρωμάτων', 'Έλεγχος Thermoblock', 'Κάψουλες προστασίας αρώματος']
+        },
+        specifications: {
+            pressure: 'High pressure system',
+            variety: 'Coffee & Chocolate',
+            system: 'Lavazza BLUE Capsules',
+            temp: 'Optimal thermal control'
+        },
+        images: [
+            'images/Lavazza-Logo.png',
+            'images/Lavazza BLUE capsule.png'
+        ]
+    },
+
+    // ===== SNACK VENDING =====
+    {
+        id: 'snack-combo-deluxe',
+        category: 'vending-snacks',
+        type: 'floor-standing',
+        brand: 'necta',
+        name: {
+            en: 'Bianchi BVM 685',
+            gr: 'Bianchi BVM 685'
         },
         description: {
             en: 'Large-capacity snack vending machine with temperature control for fresh food. Ideal for factories, hospitals, and high-traffic locations requiring diverse food options.',
             gr: 'Μηχανή αυτόματης πώλησης σνακ μεγάλης χωρητικότητας με έλεγχο θερμοκρασίας για φρέσκα τρόφιμα. Ιδανική για εργοστάσια, νοσοκομεία και χώρους υψηλής κίνησης που απαιτούν ποικιλία επιλογών.'
         },
         features: {
-            en: [
-                'Fresh daily delivery options',
-                'Temperature-controlled compartments',
-                'Healthy alternatives section',
-                'Top-tier brand selection',
-                'Cashless payment systems',
-                'Real-time inventory tracking'
-            ],
-            gr: [
-                'Επιλογές φρέσκιας καθημερινής παράδοσης',
-                'Θερμοκρασιακά ελεγχόμενα διαμερίσματα',
-                'Τμήμα υγιεινών εναλλακτικών',
-                'Επιλογή κορυφαίων brands',
-                'Συστήματα ανέπαφης πληρωμής',
-                'Παρακολούθηση αποθέματος σε πραγματικό χρόνο'
-            ]
+            en: ['Temperature Control', 'Cashless Payment', 'Smart Inventory', '60 Selections', 'Energy A++'],
+            gr: ['Έλεγχος Θερμοκρασίας', 'Ανέπαφη Πληρωμή', 'Έξυπνο Απόθεμα', '60 Επιλογές', 'Ενέργεια A++']
         },
         specifications: {
             capacity: '60 selections',
@@ -76,434 +193,246 @@ const products = [
             temperature: '3-7°C (chilled section)'
         },
         images: [
-            'images/bandicam 2026-02-06 15-10-55-195.jpg',
-            'images/bandicam 2026-02-06 15-10-57-883.jpg',
-            'images/bandicam 2026-02-06 15-11-01-396.jpg'
+            'images/bianchi-bvm-685.jpg'
         ]
     },
-    {
-        id: 'drink-cooler-pro',
-        category: 'drinks',
-        name: {
-            en: 'Professional Drink Cooler',
-            gr: 'Επαγγελματικό Ψυγείο Ποτών'
-        },
-        description: {
-            en: 'High-capacity refrigerated drink vending machine with optimal cooling technology. Perfect for keeping beverages ice-cold in any environment.',
-            gr: 'Ψυγείο ποτών υψηλής χωρητικότητας με βέλτιστη τεχνολογία ψύξης. Ιδανικό για να διατηρεί τα ποτά παγωμένα σε οποιοδήποτε περιβάλλον.'
-        },
-        features: {
-            en: [
-                'Optimal cooling (2-4°C)',
-                'Wide selection of beverages',
-                'Energy-efficient compressor',
-                'LED interior lighting',
-                'Anti-theft security',
-                'Mobile payment ready'
-            ],
-            gr: [
-                'Βέλτιστη ψύξη (2-4°C)',
-                'Μεγάλη ποικιλία ποτών',
-                'Ενεργειακά αποδοτικός συμπιεστής',
-                'Εσωτερικός φωτισμός LED',
-                'Ασφάλεια κατά κλοπής',
-                'Έτοιμο για mobile πληρωμές'
-            ]
-        },
-        specifications: {
-            capacity: '400-500 cans/bottles',
-            dimensions: '95cm x 80cm x 185cm',
-            power: '1.2kW',
-            temperature: '2-4°C'
-        },
-        images: [
-            'images/bandicam 2026-02-06 15-11-04-749.jpg',
-            'images/bandicam 2026-02-06 15-11-11-429.jpg'
-        ]
-    },
-    // NEW PRODUCTS
+
+    // ===== WATER SOLUTIONS =====
     {
         id: 'water-dispenser-pro',
-        category: 'water',
+        category: 'water-dispensers',
+        type: 'floor-standing',
+        brand: 'Premium',
         name: {
-            en: 'PureFlow Office Water Dispenser',
-            gr: 'PureFlow Επαγγελματικός Ψύκτης Νερού'
+            en: 'HC66L Floor Standing Water Cooler (Inox)',
+            gr: 'Επιδαπέδιος ψύκτης νερού HC66L (Inox)'
         },
         description: {
-            en: 'Advanced water purification system delivering hot, cold, and sparkling water. Features UV sanitization and touchless operation for maximum hygiene.',
-            gr: 'Προηγμένο σύστημα καθαρισμού νερού που παρέχει ζεστό, κρύο και ανθρακούχο νερό. Διαθέτει αποστείρωση UV και ανέπαφη λειτουργία για μέγιστη υγιεινή.'
+            en: 'Premium stainless steel floor-standing water cooler with elegant modern design. Provides hot, cold, and room temperature water with dual taps, separate on-off switches, and adjustable thermostat.',
+            gr: 'Εκλεπτυσμένος επιδαπέδιος ψύκτης από inox πολυτελείας με κομψό και σύγχρονο σχεδιασμό. Παρέχει ζεστό, κρύο και νερό θερμοκρασίας δωματίου με διπλές βρύσες και ρυθμιζόμενο θερμοστάτη.'
         },
         features: {
-            en: ['Hot, Cold & Sparkling options', 'UV-C Sanitization', 'Touch-free dispensing', 'Leak detection system', 'Energy saving mode', 'Compact design'],
-            gr: ['Επιλογές Ζεστού, Κρύου & Ανθρακούχου', 'Αποστείρωση UV-C', 'Ανέπαφη διανομή', 'Σύστημα ανίχνευσης διαρροών', 'Λειτουργία εξοικονόμησης ενέργειας', 'Συμπαγής σχεδιασμός']
+            en: ['Hot, Cold & Room Temp', 'Stainless Steel Tank', 'Dual Taps', 'CE Certified', '1 Year Warranty'],
+            gr: ['Ζεστό, Κρύο & Δωματίου', 'Ανοξείδωτος Κάδος', 'Διπλές Βρύσες', 'Πιστοποίηση CE', 'Εγγύηση 1 Έτους']
         },
         specifications: {
-            capacity: 'Unlimited (Mains fed)',
-            dimensions: '35cm x 40cm x 110cm',
-            power: '0.5kW',
-            temperature: '4°C - 95°C'
-        },
-        images: ['images/water_system.png', 'images/bandicam 2026-02-06 15-11-14-588.jpg']
-    },
-    {
-        id: 'water-countertop',
-        category: 'water',
-        name: {
-            en: 'AquaCompact Tabletop',
-            gr: 'AquaCompact Επιτραπέζιος Μικρός'
-        },
-        description: {
-            en: 'Space-saving countertop water solution for smaller breakrooms. Delivers filtered chilled and ambient water instantly.',
-            gr: 'Λύση νερού πάγκου που εξοικονομεί χώρο για μικρότερα διαλείμματα. Παρέχει φιλτραρισμένο κρύο και νερό δωματίου άμεσα.'
-        },
-        features: {
-            en: ['Space-saving design', 'Advanced filtration', 'Simple push-button operation', 'Easy filter change', 'Low power consumption'],
-            gr: ['Σχεδιασμός εξοικονόμησης χώρου', 'Προηγμένο φιλτράρισμα', 'Απλή λειτουργία με κουμπί', 'Εύκολη αλλαγή φίλτρου', 'Χαμηλή κατανάλωση ενέργειας']
-        },
-        specifications: {
-            capacity: 'Mains fed',
-            dimensions: '30cm x 35cm x 45cm',
-            power: '0.3kW',
-            temperature: '5°C - Ambient'
-        },
-        images: ['images/premium_water_dispenser_office_1770389979443.png', 'images/bandicam 2026-02-06 15-11-17-578.jpg']
-    },
-    {
-        id: 'coffee-barista-pro',
-        category: 'coffee',
-        name: {
-            en: 'BaristaTouch Pro',
-            gr: 'BaristaTouch Pro'
-        },
-        description: {
-            en: 'High-volume coffee vending machine with 21.5" HD touchscreen. Offers 24 customizable coffee recipes including iced coffee options.',
-            gr: 'Μηχανή καφέ μεγάλης χωρητικότητας με οθόνη αφής HD 21.5". Προσφέρει 24 προσαρμόσιμες συνταγές καφέ, συμπεριλαμβανομένων επιλογών παγωμένου καφέ.'
-        },
-        features: {
-            en: ['24 Coffee Varieties', 'Iced Coffee Module', 'Dual Grinders', 'Fresh Milk System', 'Payment System Ready', 'Telemetry Enabled'],
-            gr: ['24 Ποικιλίες Καφέ', 'Μονάδα Παγωμένου Καφέ', 'Διπλοί Μύλοι', 'Σύστημα Φρέσκου Γάλακτος', 'Υποστήριξη Συστημάτων Πληρωμής', 'Τηλεμετρία']
-        },
-        specifications: {
-            capacity: '4kg beans, 600 cups',
-            dimensions: '70cm x 75cm x 183cm',
-            power: '3.2kW',
-            cupsPerDay: '500+'
-        },
-        images: ['images/office_coffee.png', 'images/bandicam 2026-02-06 15-11-24-124.jpg']
-    },
-    {
-        id: 'coffee-compact',
-        category: 'coffee',
-        name: {
-            en: 'Office Star Compact',
-            gr: 'Office Star Compact'
-        },
-        description: {
-            en: 'Perfect entry-level bean-to-cup machine for small to medium offices. Reliable, fast, and easy to maintain.',
-            gr: 'Ιδανική εισαγωγική μηχανή bean-to-cup για μικρά έως μεσαία γραφεία. Αξιόπιστη, γρήγορη και εύκολη στη συντήρηση.'
-        },
-        features: {
-            en: ['One-touch cappuccino', 'Ceramic grinder', 'Auto-cleaning brewing unit', 'Adjustable spout height', 'User profiles'],
-            gr: ['Cappuccino με ένα άγγιγμα', 'Κεραμικός μύλος', 'Αυτοκαθαριζόμενη μονάδα', 'Ρυθμιζόμενο ύψος', 'Προφίλ χρηστών']
-        },
-        specifications: {
-            capacity: '1kg beans',
-            dimensions: '30cm x 45cm x 50cm',
-            power: '1.5kW',
-            cupsPerDay: '50-100'
-        },
-        images: ['images/bandicam 2026-02-06 15-11-27-097.jpg', 'images/bandicam 2026-02-06 15-11-29-340.jpg']
-    },
-    {
-        id: 'snack-healthy-plus',
-        category: 'snacks',
-        name: {
-            en: 'GreenLife Healthy Vending',
-            gr: 'GreenLife Healthy Vending'
-        },
-        description: {
-            en: 'Designed specifically for healthy snack options and salads. Features soft-drop technology to protect delicate items.',
-            gr: 'Σχεδιασμένη ειδικά για υγιεινά σνακ και σαλάτες. Διαθέτει τεχνολογία soft-drop για την προστασία ευαίσθητων προϊόντων.'
-        },
-        features: {
-            en: ['Soft-drop elevator', 'Dual temperature zones', 'Nutritional info display', 'Recycled material construction', 'Energy efficiency A++'],
-            gr: ['Ανελκυστήρας soft-drop', 'Διπλές ζώνες θερμοκρασίας', 'Εμφάνιση διατροφικών πληροφοριών', 'Κατασκευή από ανακυκλωμένα υλικά', 'Ενεργειακή απόδοση A++']
-        },
-        specifications: {
-            capacity: '40 selections',
-            dimensions: '90cm x 88cm x 183cm',
-            power: '0.6kW',
-            temperature: '3°C - 14°C'
-        },
-        images: ['images/vending_office.png', 'images/bandicam 2026-02-06 15-11-32-092.jpg']
-    },
-    {
-        id: 'snack-tabletop',
-        category: 'snacks',
-        name: {
-            en: 'MiniMarket Tabletop',
-            gr: 'MiniMarket Επιτραπέζιο'
-        },
-        description: {
-            en: 'Compact vending solution for impulse snacks/gums/accessories. Can be placed on counters or mounted on walls.',
-            gr: 'Συμπαγής λύση αυτόματης πώλησης για σνακ/τσίχλες/αξεσουάρ. Μπορεί να τοποθετηθεί σε πάγκους ή να στερεωθεί σε τοίχους.'
-        },
-        features: {
-            en: ['Compact footprint', 'Battery operated option', 'Coin mechanism included', 'Vandal resistant', 'High visibility glass'],
-            gr: ['Συμπαγές μέγεθος', 'Επιλογή λειτουργίας με μπαταρία', 'Περιλαμβάνεται κερματοδέκτης', 'Ανθεκτικό στους βανδαλισμούς', 'Γυαλί υψηλής ορατότητας']
-        },
-        specifications: {
-            capacity: '9 selections',
-            dimensions: '50cm x 50cm x 80cm',
-            power: '12V / Mains',
-            temperature: 'Ambient'
-        },
-        images: ['images/bandicam 2026-02-06 15-11-34-537.jpg', 'images/bandicam 2026-02-06 15-11-45-178.jpg']
-    },
-    {
-        id: 'combo-ultimate',
-        category: 'combo',
-        name: {
-            en: 'Ultimate Combo Vending Solution',
-            gr: 'Απόλυτη Λύση Combo Vending'
-        },
-        description: {
-            en: 'All-in-one vending solution combining coffee, snacks, and cold drinks in a single unit. Maximum convenience for medium to large workplaces.',
-            gr: 'Ολοκληρωμένη λύση vending που συνδυάζει καφέ, σνακ και κρύα ποτά σε μία μονάδα. Μέγιστη ευκολία για μεσαίους έως μεγάλους χώρους εργασίας.'
-        },
-        features: {
-            en: [
-                'Coffee machine integrated',
-                'Snack and drink sections',
-                'Single payment system',
-                'Compact footprint',
-                'Unified inventory management',
-                '24/7 remote monitoring'
-            ],
-            gr: [
-                'Ενσωματωμένη μηχανή καφέ',
-                'Τμήματα σνακ και ποτών',
-                'Ενιαίο σύστημα πληρωμής',
-                'Συμπαγές αποτύπωμα',
-                'Ενοποιημένη διαχείριση αποθέματος',
-                'Απομακρυσμένη παρακολούθηση 24/7'
-            ]
-        },
-        specifications: {
-            capacity: 'Coffee: 1.5kg beans, Snacks: 40 selections, Drinks: 200 units',
-            dimensions: '120cm x 90cm x 190cm',
-            power: '3.2kW',
-            cupsPerDay: '150-200'
+            capacity: '3.8L cold water, 1.3L hot water',
+            dimensions: '33cm x 33cm x 96cm',
+            power: '85W cold / 500W hot',
+            weight: '15kg'
         },
         images: [
-            'images/bandicam 2026-02-06 15-11-14-588.jpg',
-            'images/bandicam 2026-02-06 15-11-17-578.jpg',
-            'images/bandicam 2026-02-06 15-11-24-124.jpg'
+            'images/hc66l-inox.png'
         ]
     },
     {
-        id: 'coffee-espresso-compact',
-        category: 'coffee',
+        id: 'water-vikos-500ml',
+        category: 'water-dispensers',
+        type: 'bottle',
+        brand: 'Vikos',
         name: {
-            en: 'Compact Espresso Station',
-            gr: 'Συμπαγής Σταθμός Espresso'
+            en: 'Vikos Natural Mineral Water 500ml',
+            gr: 'Vikos Φυσικό Μεταλλικό Νερό 500ml'
         },
         description: {
-            en: 'Space-saving espresso machine perfect for small offices and boutique hotels. Professional quality in a compact design.',
-            gr: 'Μηχανή espresso που εξοικονομεί χώρο, ιδανική για μικρά γραφεία και boutique ξενοδοχεία. Επαγγελματική ποιότητα σε συμπαγή σχεδιασμό.'
+            en: 'The classic 500ml PET bottle for refreshment on the go. Pure mineral water bottled at the source, maintaining all its nutritional properties and crystal clear taste.',
+            gr: 'Η κλασική φιάλη PET 500ml για αναζωογόνηση κάθε στιγμή. Αγνό μεταλλικό νερό που εμφιαλώνεται στην πηγή, διατηρώντας όλες τις θρεπτικές του ιδιότητες και την κρυστάλλινη γεύση του.'
         },
         features: {
-            en: [
-                'Professional espresso quality',
-                'Small footprint design',
-                'Quick heat-up time',
-                'Easy maintenance',
-                'Multiple cup sizes',
-                'Low noise operation'
-            ],
-            gr: [
-                'Επαγγελματική ποιότητα espresso',
-                'Σχεδιασμός μικρού αποτυπώματος',
-                'Γρήγορος χρόνος θέρμανσης',
-                'Εύκολη συντήρηση',
-                'Πολλαπλά μεγέθη φλιτζανιών',
-                'Χαμηλή λειτουργία θορύβου'
-            ]
+            en: ['Portable size', 'Recyclable PET', 'Fresh from Pindos mounts', 'Crystal clear taste', 'Daily hydration'],
+            gr: ['Φορητό μέγεθος', 'Ανακυκλώσιμο PET', 'Φρέσκο από την Πίνδο', 'Κρυστάλλινη γεύση', 'Καθημερινή ενυδάτωση']
         },
         specifications: {
-            capacity: '1kg beans, 2L water',
-            dimensions: '45cm x 55cm x 160cm',
-            power: '1.8kW',
-            cupsPerDay: '80-120'
+            volume: '500 ml',
+            ph: '7.5',
+            calcium: '101 mg/l',
+            magnesium: '1.54 mg/l'
         },
         images: [
-            'images/bandicam 2026-02-06 15-11-27-097.jpg',
-            'images/bandicam 2026-02-06 15-11-29-340.jpg'
+            'images/vikos_500ml.png'
         ]
     },
     {
-        id: 'snack-healthy-choice',
-        category: 'snacks',
+        id: 'water-vikos-10lt',
+        category: 'water-dispensers',
+        type: 'bottle',
+        brand: 'Vikos',
         name: {
-            en: 'Healthy Choice Snack Machine',
-            gr: 'Μηχανή Σνακ Υγιεινών Επιλογών'
+            en: 'Vikos Natural Mineral Water 10lt',
+            gr: 'Vikos Φυσικό Μεταλλικό Νερό 10lt'
         },
         description: {
-            en: 'Specialized vending machine focused on healthy snacks, organic options, and nutritious alternatives. Perfect for health-conscious workplaces.',
-            gr: 'Εξειδικευμένη μηχανή αυτόματης πώλησης που εστιάζει σε υγιεινά σνακ, βιολογικές επιλογές και θρεπτικές εναλλακτικές. Ιδανική για χώρους εργασίας με έμφαση στην υγεία.'
+            en: 'Natural mineral water directly from the Vikos source in Zagorochoria. The 10lt PET bottle is ergonomically designed for easy placement on water coolers, maintaining all the mineral properties.',
+            gr: 'Φυσικό μεταλλικό νερό απευθείας από την πηγή Βίκος στα Ζαγοροχώρια. Η φιάλη PET 10lt είναι εργονομικά σχεδιασμένη για εύκολη τοποθέτηση σε ψύκτες νερού, διατηρώντας όλες τις μεταλλικές ιδιότητες.'
         },
         features: {
-            en: [
-                'Organic and natural products',
-                'Nutritional information display',
-                'Allergen labeling',
-                'Fresh fruit options',
-                'Protein bars and healthy snacks',
-                'Vegan and gluten-free selections'
-            ],
-            gr: [
-                'Βιολογικά και φυσικά προϊόντα',
-                'Εμφάνιση διατροφικών πληροφοριών',
-                'Επισήμανση αλλεργιογόνων',
-                'Επιλογές φρέσκων φρούτων',
-                'Μπάρες πρωτεΐνης και υγιεινά σνακ',
-                'Vegan και χωρίς γλουτένη επιλογές'
-            ]
+            en: ['Ergonomic design', 'Single-use PET', 'Rich in minerals', 'Easy to change'],
+            gr: ['Εργονομικός σχεδιασμός', 'PET μίας χρήσης', 'Πλούσιο σε μέταλλα', 'Εύκολη αλλαγή']
         },
         specifications: {
-            capacity: '45 selections',
-            dimensions: '85cm x 75cm x 180cm',
-            power: '0.6kW',
-            temperature: '5-8°C'
+            volume: '10 Liters',
+            packaging: 'Recyclable PET',
+            origin: 'Zagorochoria, Greece'
         },
         images: [
-            'images/bandicam 2026-02-06 15-11-32-092.jpg',
-            'images/bandicam 2026-02-06 15-11-34-537.jpg'
+            'images/vikos_10lt.png'
+        ]
+    },
+    // ===== NEW PRODUCTS FROM NEWIMG =====
+    {
+        id: 'vending-drinks-dixie-501e',
+        category: 'vending-drinks',
+        type: 'floor-standing',
+        brand: 'Dixie Narco',
+        name: {
+            en: 'Dixie Narco 501E',
+            gr: 'Dixie Narco 501E'
+        },
+        description: {
+            en: 'A legendary vending machine in the beverage industry, the 501E is recognized for its exceptional performance, reliability, and versatility. Approved for outdoor use.',
+            gr: 'Μια θρυλική μηχανή αυτόματης πώλησης στη βιομηχανία ποτών, η 501E είναι αναγνωρισμένη για την εξαιρετική της απόδοση, αξιοπιστία και ευελιξία. Εγκεκριμένη για εξωτερική χρήση.'
+        },
+        features: {
+            en: ['9 selections', '501 cans capacity', 'Outdoor approved', 'DEX and MDB compatible', 'High capacity refrigeration'],
+            gr: ['9 επιλογές', 'Χωρητικότητα 501 κουτάκια', 'Εγκεκριμένο για εξωτερικό χώρο', 'Συμβατό με DEX και MDB', 'Ψύξη υψηλής απόδοσης']
+        },
+        specifications: {
+            capacity: '501 cans (12oz) / 280 bottles (20oz)',
+            dimensions: '72"H x 37"W x 35"D',
+            power: '115 VAC, 60 Hz',
+            weight: '865 lbs'
+        },
+        images: [
+            'images/dixie-narco-501e.png'
         ]
     },
     {
-        id: 'drink-energy-sports',
-        category: 'drinks',
+        id: 'vending-drinks-vendo-682',
+        category: 'vending-drinks',
+        type: 'floor-standing',
+        brand: 'Sanden Vendo',
         name: {
-            en: 'Energy & Sports Drink Station',
-            gr: 'Σταθμός Ενεργειακών & Αθλητικών Ποτών'
+            en: 'Sanden Vendo VDI 682',
+            gr: 'Sanden Vendo VDI 682'
         },
         description: {
-            en: 'Specialized cooler for energy drinks, sports beverages, and functional drinks. Ideal for gyms, factories, and active workplaces.',
-            gr: 'Εξειδικευμένο ψυγείο για ενεργειακά ποτά, αθλητικά ροφήματα και λειτουργικά ποτά. Ιδανικό για γυμναστήρια, εργοστάσια και ενεργούς χώρους εργασίας.'
+            en: 'High-performance cold drinks vending machine from the leading brand Sanden Vendo. Offers large capacity and robust reliability for busy locations.',
+            gr: 'Μηχανή αυτόματης πώλησης κρύων ποτών υψηλής απόδοσης από την κορυφαία μάρκα Sanden Vendo. Προσφέρει μεγάλη χωρητικότητα και στιβαρή αξιοπιστία για χώρους υψηλής κίνησης.'
         },
         features: {
-            en: [
-                'Extra-cold temperature control',
-                'Energy drink selection',
-                'Sports hydration options',
-                'Vitamin-enhanced beverages',
-                'Quick-access design',
-                'High-capacity storage'
-            ],
-            gr: [
-                'Έλεγχος εξαιρετικά χαμηλής θερμοκρασίας',
-                'Επιλογή ενεργειακών ποτών',
-                'Επιλογές αθλητικής ενυδάτωσης',
-                'Ροφήματα εμπλουτισμένα με βιταμίνες',
-                'Σχεδιασμός γρήγορης πρόσβασης',
-                'Αποθήκευση υψηλής χωρητικότητας'
-            ]
+            en: ['10 selections', '680 cans capacity', 'Electronic control system', 'Energy efficient', 'Robust design'],
+            gr: ['10 επιλογές', 'Χωρητικότητα 680 κουτάκια', 'Ηλεκτρονικό σύστημα ελέγχου', 'Ενεργειακά αποδοτικό', 'Στιβαρός σχεδιασμός']
         },
         specifications: {
-            capacity: '350 units',
-            dimensions: '90cm x 75cm x 180cm',
-            power: '1.0kW',
-            temperature: '1-3°C'
+            capacity: '680 cans',
+            selections: '10',
+            brand: 'Sanden Vendo'
         },
         images: [
-            'images/bandicam 2026-02-06 15-11-45-178.jpg',
-            'images/bandicam 2026-02-06 15-11-48-765.jpg'
+            'images/sanden-vendo-682.jpg'
         ]
     },
     {
-        id: 'micromarket-solution',
-        category: 'combo',
+        id: 'coffee-gaggia-cadorna',
+        category: 'coffee-capsule',
+        type: 'tabletop',
+        brand: 'Gaggia',
         name: {
-            en: 'Micro Market Solution',
-            gr: 'Λύση Micro Market'
+            en: 'Gaggia Cadorna Prestige',
+            gr: 'Gaggia Cadorna Prestige'
         },
         description: {
-            en: 'Complete self-service micro market with open shelving, refrigerated sections, and self-checkout kiosk. Transform any space into a mini convenience store.',
-            gr: 'Πλήρης λύση micro market αυτοεξυπηρέτησης με ανοιχτά ράφια, ψυγεία και kiosk αυτόματης πληρωμής. Μετατρέψτε οποιονδήποτε χώρο σε mini κατάστημα ευκολίας.'
+            en: '100% Italian excellence. The Cadorna Prestige offers up to 14 different beverages at the touch of a button, featuring an interactive TFT display and integrated milk carafe.',
+            gr: '100% Ιταλική υπεροχή. Η Cadorna Prestige προσφέρει έως και 14 διαφορετικά ροφήματα με το πάτημα ενός κουμπιού, διαθέτοντας διαδραστική οθόνη TFT και ενσωματωμένη κανάτα γάλακτος.'
         },
         features: {
-            en: [
-                'Open shelving design',
-                'Self-checkout kiosk',
-                'Refrigerated and ambient sections',
-                'Fresh food daily delivery',
-                'Inventory management system',
-                'Security cameras integrated'
-            ],
-            gr: [
-                'Σχεδιασμός ανοιχτών ραφιών',
-                'Kiosk αυτόματης πληρωμής',
-                'Ψυγεία και τμήματα περιβάλλοντος',
-                'Καθημερινή παράδοση φρέσκων τροφίμων',
-                'Σύστημα διαχείρισης αποθέματος',
-                'Ενσωματωμένες κάμερες ασφαλείας'
-            ]
+            en: ['14 different beverages', 'Integrated milk carafe', '100% Ceramic grinders', '4 user profiles', 'Over Ice Coffee function'],
+            gr: ['14 διαφορετικά ροφήματα', 'Ενσωματωμένη κανάτα γάλακτος', '100% Κεραμικοί μύλοι', '4 προφίλ χρήστη', 'Λειτουργία Over Ice Coffee']
         },
         specifications: {
-            capacity: '200+ products',
-            dimensions: 'Modular (custom sizing)',
-            power: '2.5kW',
-            area: '15-30 sq meters'
+            pressure: '15 bar',
+            power: '1900 W',
+            capacity: '1.5L water tank',
+            weight: '9.6 kg'
         },
         images: [
-            'images/bandicam 2026-02-06 15-11-52-152.jpg',
-            'images/bandicam 2026-02-06 15-11-55-823.jpg',
-            'images/bandicam 2026-02-06 15-12-13-681.jpg'
+            'images/gaggia-cadorna.png'
         ]
     },
     {
-        id: 'water-pure-station',
-        category: 'water',
+        id: 'coffee-bianchi-bvm333',
+        category: 'coffee-capsule',
+        type: 'floor-standing',
+        brand: 'Bianchi',
         name: {
-            en: 'Pure Filtration Water Station',
-            gr: 'Σταθμός Φιλτραρίσματος Καθαρού Νερού'
+            en: 'Bianchi BVM 333',
+            gr: 'Bianchi BVM 333'
         },
         description: {
-            en: 'Advanced water dispenser with multi-stage filtration and UV-C purification. Provides chilled, ambient, and sparkling water for premium office hydration.',
-            gr: 'Προηγμένος διανομέας νερού με φιλτράρισμα πολλαπλών σταδίων και αποστείρωση UV-C. Παρέχει κρύο, φυσικό και ανθρακούχο νερό για premium ενυδάτωση γραφείου.'
+            en: 'Compact and reliable coffee vending machine from Bianchi. Ideal for office environments providing high-quality espresso and a variety of hot drinks.',
+            gr: 'Συμπαγής και αξιόπιστη μηχανή αυτόματης πώλησης καφέ από την Bianchi. Ιδανική για περιβάλλοντα γραφείου, παρέχοντας υψηλής ποιότητας espresso και ποικιλία ζεστών ροφημάτων.'
+        },
+        features: {
+            en: ['Compact design', 'Professional espresso group', 'Multiple hot drink options', 'Easy maintenance', 'Reliable performance'],
+            gr: ['Συμπαγής σχεδιασμός', 'Επαγγελματικό γκρουπ espresso', 'Πολλαπλές επιλογές για ζεστά ροφήματα', 'Εύκολη συντήρηση', 'Αξιόπιστη απόδοση']
+        },
+        specifications: {
+            type: 'Automatic',
+            brand: 'Bianchi',
+            origin: 'Italy'
+        },
+        images: [
+            'images/bianchi-bvm-333.jpeg'
+        ]
+    },
+    {
+        id: 'water-cooler-yl1674t',
+        category: 'water-dispensers',
+        type: 'tabletop',
+        brand: 'Premium',
+        name: {
+            en: 'YL1674T Tabletop Water Cooler',
+            gr: 'Επιτραπέζιος ψύκτης νερού YL1674T'
+        },
+        description: {
+            en: 'Elegant and modern tabletop water cooler made of luxury inox material. Features dual taps for hot, cold, and room temperature water with an adjustable thermostat and energy-saving switches.',
+            gr: 'Κομψός και σύγχρονος επιτραπέζιος ψύκτης νερού από υλικό inox πολυτελείας. Διαθέτει δύο βρύσες για ζεστό, κρύο και νερό θερμοκρασίας δωματίου, με ρυθμιζόμενο θερμοστάτη και διακόπτες εξοικονόμησης ενέργειας.'
         },
         features: {
             en: [
-                'Touchless sensor operation',
-                'High-capacity cooling system',
-                'Sparkling water option',
-                'Eco-friendly refrigerant',
-                'Compact sleek design',
-                'Easy filter replacement'
+                'Hot, Cold & Room Temperature',
+                'Dual tap functionality',
+                'Luxury Inox & Black finish',
+                'Large capacity stainless steel tank',
+                'Independent heating/cooling switches',
+                'Adjustable thermostat',
+                'Compact ergonomic design'
             ],
             gr: [
-                'Λειτουργία με αισθητήρα ανέπαφα',
-                'Σύστημα ψύξης υψηλής απόδοσης',
-                'Επιλογή ανθρακούχου νερού',
-                'Οικολογικό ψυκτικό υγρό',
-                'Συμπαγής κομψός σχεδιασμός',
-                'Εύκολη αντικατάσταση φίλτρου'
+                'Ζεστό, Κρύο & Θερμοκρασία Δωματίου',
+                'Λειτουργία με δύο βρύσες',
+                'Υλικό Inox πολυτελείας & Μαύρο φινίρισμα',
+                'Ανοξείδωτος κάδος μεγάλης χωρητικότητας',
+                'Ανεξάρτητοι διακόπτες λειτουργίας',
+                'Ρυθμιζόμενος θερμοστάτης',
+                'Συμπαγής εργονομικός σχεδιασμός'
             ]
         },
         specifications: {
-            capacity: '30L/hour chilled',
-            dimensions: '35cm x 40cm x 115cm',
-            power: '0.5kW',
-            temperature: '4-10°C'
+            capacity: '2L Cold / 1L Hot',
+            dimensions: '31cm x 34cm x 50cm',
+            power: '120W (Cooling) / 420W (Heating)',
+            weight: '12 kg',
+            certification: 'CE',
+            warranty: '1 Year'
         },
         images: [
-            'images/water_system.png'
+            'images/yl1674t.png'
         ]
     }
 ];
 
-// Export for use in other files
+// Export for use in other files (Node.js)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = products;
 }

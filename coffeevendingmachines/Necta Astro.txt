@@ -1,0 +1,85 @@
+A new star in hot drink vending.
+The Necta Astro is a winning solution for medium to large locations serving the expectations of the most demanding customers. The machine offers 18 direct selections on a numeric keypad and large back-lit drink labels. The drink menu itself can be customized for any location and there is also an option to dispense cold drinks (with an additional internal cooling unit). Astro’s cup station also accepts cups and jugs up to 14cm in height and a cup sensor guarantees drink delivery.
+
+Necta Astro Key Features
+Customizable drink menu
+Smooth wipe-clean surfaces
+Display screen progress bar
+Low dispensing area for disabled people
+Z3000 coffee brewer
+Cup sensor for guaranteed vend
+
+PAYMENT SYSTEMS
+
+Astro is equipped for the installation of payment systems with Executive, BDV, MDB protocols and for mounting validators.
+
+Simultaneously, the following can be installed:
+
+• Change-giving coin validator;
+
+• Banknote reader;
+
+• Cashless system via key or card.
+
+ 
+
+Features
+Height	183 cm *
+Width	65 cm
+Depth	74.2 cm
+Open door footprint	132 cm
+Weight	180 kg
+Power Supply Voltage	230 V
+Power Supply Frequency	50 Hz
+Installed Power	2400 W
+Water Network Pressure	between 0.5 and 8.5 bar
+* Adjustable feet: +10, -5 mm
+ 
+
+Indicative Capacity
+Cups	650 (Ø 70-71 or 73-74 mm) *
+Stirrers	575 (l. 95/105/115 mm)
+Containers	7 to 8
+Espresso Boiler	0.6 l
+Instant Boiler	4.2 l
+* 166 cc
+Necta Astro
+A winning solution designed for medium/large locations, meeting the expectations of the most demanding clients through a vast selection of beverages and their excellent quality.
+
+The 18 direct selections or numerous ones offered by the numeric keypad (Lx version), standard Necta components, introduced innovations, a high number of containers, and an innovative and elegant design make Astro the most performing distributor in its market segment.
+
+INNOVATIONS
+
+Astro can feature up to 8 product containers with 6 different capacities (see table on the back), allowing for optimal product quantity proportional to actual consumption, thus preserving freshness. Additionally, the Lx version offers two different coffee blends thanks to a single coffee group shelf equipped with two grinders and a modular container. Astro is an extremely flexible machine: internal configurations can be modified simply by replacing the internal modular shelves. Furthermore, beverages can be flexibly assigned to any button on the selection panel. The internal accessibility is excellent due to the 180° opening of the cup turret shelf with a double hinge. All loader and technician operations are thus simplified. The cup turret with individually extractable tubes, the easy removal of the cup release mechanism, the tool-free removable dispensing compartment, the tilting liquid collection tray, and the easily extractable stirrer conveyor are just a few examples that will facilitate cleaning and maintenance operations on Astro.
+
+USER INTERFACE
+
+18 direct selections (alternatively, numeric selections in the Lx version) plus 1 preselection to adjust sugar quantity in 6 levels.
+
+• Large backlit labels for perfect readability;
+
+• Slight inclination of the blue alphanumeric display (4 lines x 20 characters);
+
+• Progressive bar on display with acoustic signal at the end of beverage dispensing;
+
+• Full compliance of the user interface with disability regulations;
+
+DESIGN
+
+The design of Astro, coordinated with the entire Necta range, integrates perfectly in any environment, alone or in a bank, to offer a complete vending solution. The silver machine with black details, standard foot covers, rounded shapes, blue display, elegant keypad coordinated with large backlit sandwich panels, and easily customizable make Astro the ideal machine for locations where elegance and high reliability are desired.
+
+EXCELLENT BEVERAGE QUALITY
+
+Thanks to the Z 3000 group, with standard heater, and the now common Necta mixers across the entire range, Astro can offer excellent espresso coffee and superb soluble beverages. Additionally, for beverages obtained from soluble coffee, sugar can be premixed as an alternative to direct dispensing into the cup. The ideal temperature and excellent product presentation are ensured by the short beverage path and the proximity of the dispensing point to the cup rim. Hygiene is always at the highest levels: the horizontal movement of the nozzles, unreachable from the outside in the resting position, guarantees perfect emptying of the tubes from any liquid residue.
+
+ELECTRONICS
+
+The 16-bit electronics with built-in flash eprom is extremely flexible and complete, as well as being compatible with the Flash and Up-Key PC application. Astro also allows high flexibility in reconfiguring the selection menu, assigning each of the 18 buttons to any selection among those provided in memory. Astro is designed to operate in conjunction with other Necta distributors equipped with 16-bit electronics, with the possibility of combined selections, master/slave operation, and GSM control with a single modem.
+
+
+SKU	NCTASTR
+Condition	New
+Motor rpm	1400
+Produttore	Necta
+Pieces for Box	100
+Intensità	4 su 6
