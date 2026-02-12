@@ -1,0 +1,4 @@
+﻿// Route for brands page
+app.get('/brands', (req, res) => {
+    res.sendFile(path.join(__dirname, 'brands.html'));
+});

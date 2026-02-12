@@ -253,16 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reveal elements
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Mobile menu toggle
-    const toggle = document.getElementById('nav-toggle');
-    const nav = document.getElementById('nav-menu');
-
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('show');
-            toggle.classList.toggle('active');
-        });
-    }
+    // Mobile menu toggle - Handled by common.js
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

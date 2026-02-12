@@ -1,0 +1,37 @@
+{
+    "goal": "Ensure perfect consistency and professional experience for Advantage and CTA sections on all devices",
+    "domains": [
+        "Frontend",
+        "QA"
+    ],
+    "tasks": [
+        {
+            "id": "FE-001",
+            "title": "Refine Advantage Section Responsive Layout",
+            "description": "Implement fluid grid adjustments and card scaling for mobile/tablet. Ensure visual parity with 'Where We Serve'.",
+            "priority": "P0",
+            "agent": "frontend",
+            "dependencies": []
+        },
+        {
+            "id": "FE-002",
+            "title": "Optimize CTA Section Mobile Typography & Spacing",
+            "description": "Adjust font sizes and padding for seamless mobile readability. Fix phone field layout specific to mobile.",
+            "priority": "P0",
+            "agent": "frontend",
+            "dependencies": [
+                "FE-001"
+            ]
+        },
+        {
+            "id": "QA-001",
+            "title": "Cross-Device Verification",
+            "description": "Verify UI across Mobile (iPhone/Android), Tablet (iPad), and Desktop breakpoints.",
+            "priority": "P1",
+            "agent": "qa",
+            "dependencies": [
+                "FE-002"
+            ]
+        }
+    ]
+}
