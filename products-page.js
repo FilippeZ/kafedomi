@@ -22,11 +22,13 @@
         const urlParams = new URLSearchParams(window.location.search);
         const categoryParam = urlParams.get('category');
         const brandParam = urlParams.get('brand');
+        let shouldRender = false;
 
         if (categoryParam) {
             currentCategory = categoryParam;
             updateActiveFilterButton(categoryParam);
             updatePageTitle(categoryParam);
+            shouldRender = true;
         }
 
         if (brandParam) {
@@ -35,6 +37,12 @@
             currentCategory = 'all';
             updateActiveFilterButton('all');
             updatePageTitleForBrand(brandParam);
+            shouldRender = true;
+        }
+
+        // Trigger re-render if filters were applied from URL
+        if (shouldRender) {
+            renderProducts();
         }
     }
 

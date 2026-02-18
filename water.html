@@ -27,8 +27,10 @@
     <!-- Water Solutions Hero -->
     <section class="water-hero">
         <div class="container reveal">
-            <h1 data-en="Pure Natural Vitality" data-gr="Αγνή Φυσική Ζωντάνια">Pure Natural Vitality</h1>
-            <p data-en="Premium water solutions and elite cooling technology for the modern professional workspace."
+            <h1 class="water-hero__title" data-en="Pure Natural Vitality" data-gr="Αγνή Φυσική Ζωντάνια">Pure Natural
+                Vitality</h1>
+            <p class="water-hero__subtitle"
+                data-en="Premium water solutions and elite cooling technology for the modern professional workspace."
                 data-gr="Premium λύσεις νερού και κορυφαία τεχνολογία ψύξης για τον σύγχρονο επαγγελματικό χώρο.">
                 Premium water solutions and elite cooling technology for the modern professional workspace.
             </p>
@@ -54,8 +56,8 @@
     <section class="vikos-brand-section">
         <div class="container">
             <div class="glass-panel reveal">
-                <div class="layered-reveal">
-                    <div class="vikos-brand__visual-stack">
+                <div class="vikos-layout">
+                    <div class="vikos-layout__visual">
                         <div class="vikos-brand__bg-circle"></div>
                         <!-- Parallax 500ml Bottle Showcase -->
                         <div id="vikos-bottles-container" class="water-float-premium">
@@ -63,42 +65,34 @@
                         </div>
                     </div>
 
-                    <div class="vikos-brand__content">
-                        <div class="vikos-logo-wrapper"
-                            style="display: inline-block; padding: 1rem; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,95,115,0.05); margin-bottom: 2.5rem;">
-                            <img src="water/VIKOS_LOGO.jpg" alt="Vikos Logo" style="width: 160px; display: block;">
+                    <div class="vikos-layout__content">
+                        <div class="vikos-logo-box">
+                            <img src="water/VIKOS_LOGO.jpg" alt="Vikos Logo">
                         </div>
 
-                        <h2 style="font-size: clamp(2.5rem, 5vw, 3.8rem); color: #005f73; margin-bottom: 1.5rem; line-height: 1.1; font-weight: 900; letter-spacing: -2px;"
-                            data-en="Premium Hydration from Pindos" data-gr="Premium Ενυδάτωση από την Πίνδο">
+                        <h2 class="vikos-heading" data-en="Premium Hydration from Pindos"
+                            data-gr="Premium Ενυδάτωση από την Πίνδο">
                             Premium Hydration from Pindos
                         </h2>
 
-                        <p style="font-size: 1.25rem; line-height: 1.8; color: #555; margin-bottom: 3.5rem; font-weight: 400; max-width: 600px;"
+                        <p class="vikos-desc"
                             data-en="Directly from the pristine springs of Zagorochoria. Experience the absolute purity and mineral-rich vitality that only the Vikos source can provide."
                             data-gr="Απευθείας από τις παρθένες πηγές των Ζαγοροχωρίων. Ζήστε την απόλυτη αγνότητα και τη μεταλλική ζωντάνια που μόνο η πηγή Βίκος μπορεί να προσφέρει.">
                             Directly from the pristine springs of Zagorochoria. Experience the absolute purity and
                             mineral-rich vitality that only the Vikos source can provide.
                         </p>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div class="vikos-stats">
                             <!-- pH Stat -->
-                            <div class="mineral-stat">
-                                <span
-                                    style="display: block; font-size: 4rem; font-weight: 950; color: #005f73; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -2px;">7.5</span>
-                                <span
-                                    style="font-weight: 800; color: #0a9396; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px;">pH
-                                    Level</span>
+                            <div class="vikos-stat">
+                                <span class="vikos-stat__value">7.5</span>
+                                <span class="vikos-stat__label">pH Level</span>
                             </div>
 
                             <!-- Sodium Stat -->
-                            <div class="mineral-stat">
-                                <span
-                                    style="display: block; font-size: 4rem; font-weight: 950; color: #005f73; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -2px;"
-                                    data-en="Low" data-gr="Χαμηλό">Low</span>
-                                <span
-                                    style="font-weight: 800; color: #0a9396; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px;"
-                                    data-en="Sodium" data-gr="Νάτριο">Sodium</span>
+                            <div class="vikos-stat">
+                                <span class="vikos-stat__value" data-en="Low" data-gr="Χαμηλό">Low</span>
+                                <span class="vikos-stat__label" data-en="Sodium" data-gr="Νάτριο">Sodium</span>
                             </div>
                         </div>
                     </div>
