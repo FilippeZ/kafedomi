@@ -309,8 +309,18 @@
         try {
             let relatedProducts = [];
 
-            // Get products from same category
-            if (typeof products !== 'undefined') {
+            // First check if product has specific related products defined
+            if (currentProduct.relatedProducts && currentProduct.relatedProducts.length > 0) {
+                // Find these products by ID
+                if (typeof products !== 'undefined') {
+                    relatedProducts = currentProduct.relatedProducts
+                        .map(id => products.find(p => p.id === id))
+                        .filter(p => p); // Remove any not found
+                }
+            }
+
+            // Fallback: Get products from same category if no specific relations
+            if (relatedProducts.length === 0 && typeof products !== 'undefined') {
                 relatedProducts = products
                     .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
                     .slice(0, 3);
@@ -332,39 +342,43 @@
         const grid = document.getElementById('related-grid');
 
         grid.innerHTML = relatedProducts.map((product, index) => {
+            const brandName = product.brand || 'Premium';
             const name = product.name[currentLang] || product.name.en;
             const description = product.description[currentLang] || product.description.en;
-            const viewDetailsText = currentLang === 'en' ? 'View Details' : 'Δείτε Λεπτομέρειες';
-            const imageUrl = product.images[0] || 'images/placeholder.jpg';
             const features = product.features[currentLang] || product.features.en;
+            const viewDetailsText = currentLang === 'en' ? 'View Details' : 'Δείτε Λεπτομέρειες';
+            const imageUrl = product.images?.[0] || 'images/placeholder.jpg';
+            const delay = (index % 3) * 0.15;
 
+            // Using the new premium card style from products-page.js
             return `
-                <article class="product-item" data-product-id="${product.id}" style="animation-delay: ${index * 0.1}s">
-                    <div class="product-item__image">
-                        <img src="${imageUrl}" alt="${name}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
-                        <div class="product-item__overlay">
-                            <span class="product-item__quick-view">${viewDetailsText}</span>
-                        </div>
+            <article class="product-item machine-card-premium reveal" data-product-id="${product.id}" style="transition-delay: ${delay}s; cursor: pointer;">
+                <div class="machine-card-premium__image">
+                    <img src="${imageUrl}" alt="${name}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                </div>
+                <div class="machine-card-premium__content">
+                    <div class="product-card__brand" style="background: var(--premium-gradient, linear-gradient(135deg, #2c1810 0%, #8b4513 100%)); color: white; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; width: fit-content; margin-bottom: 1.5rem;">
+                        ${brandName.toUpperCase()}
                     </div>
-                    <div class="product-item__content">
-                        <h3 class="product-item__title">${name}</h3>
-                        <p class="product-item__desc">${truncateText(description, 80)}</p>
-                        <div class="product-item__features">
-                            ${features.slice(0, 2).map(f => `
-                                <span class="product-feature">
-                                    <span class="product-feature__icon">✓</span>
-                                    ${f}
-                                </span>
+                    <h3 style="font-family: var(--font-heading, serif); font-size: 1.5rem; color: var(--color-dark-chocolate, #2c1810); margin-bottom: 1rem;">${name}</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; flex-grow: 1;">${truncateText(description, 150)}</p>
+                    
+                    <div style="margin-top: auto;">
+                        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            ${features.slice(0, 3).map(f => `
+                                <li style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; margin-bottom: 0.5rem; color: #444;">
+                                    <span style="color: var(--accent-gold, #cda45e); font-weight: bold;">✓</span> ${f}
+                                </li>
                             `).join('')}
-                        </div>
-                        <div class="product-item__cta">
-                            <span>${viewDetailsText}</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
+                        </ul>
+                        
+                        <div style="width: 100%; padding: 1rem; background: var(--color-dark-chocolate, #2c1810); color: white; border-radius: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.75rem; transition: all 0.3s ease;">
+                            ${viewDetailsText}
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
             `;
         }).join('');
 

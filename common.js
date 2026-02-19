@@ -257,7 +257,13 @@
 
             // Close menu when clicking a link
             nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
+                    // Check if this is a dropdown toggle - if so, don't close the menu
+                    const parent = link.parentElement;
+                    if (parent && parent.classList.contains('has-dropdown')) {
+                        return;
+                    }
+
                     nav.classList.remove('show');
                     toggle.classList.remove('active');
                 });

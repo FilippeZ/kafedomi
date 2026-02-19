@@ -3,6 +3,7 @@ const products = [
     // ===== COFFEE VENDING MACHINES =====
     {
         id: 'coffee-necta-astro',
+        relatedProducts: ['coffee-necta-brio', 'coffee-necta-kikko', 'snack-necta-snakky'],
         category: 'vending-coffee',
         type: 'floor-standing',
         brand: 'necta',
@@ -30,6 +31,7 @@ const products = [
     },
     {
         id: 'coffee-necta-brio',
+        relatedProducts: ['coffee-necta-astro', 'coffee-necta-kikko', 'coffee-illy-mitaca-smart30'],
         category: 'vending-coffee',
         type: 'floor-standing',
         brand: 'necta',
@@ -57,6 +59,7 @@ const products = [
     },
     {
         id: 'coffee-necta-kikko',
+        relatedProducts: ['coffee-necta-astro', 'coffee-necta-brio', 'snack-necta-sfera'],
         category: 'vending-coffee',
         type: 'floor-standing',
         brand: 'necta',
@@ -86,6 +89,7 @@ const products = [
     },
     {
         id: 'coffee-fas-400',
+        relatedProducts: ['coffee-necta-astro', 'coffee-necta-kikko', 'snack-sielaff-fs2020'],
         category: 'vending-coffee',
         type: 'floor-standing',
         brand: 'illy',
@@ -114,6 +118,7 @@ const products = [
     },
     {
         id: 'coffee-illy-mitaca-smart30',
+        relatedProducts: ['coffee-lavazza-blue', 'coffee-gaggia-cadorna', 'coffee-necta-brio'],
         category: 'coffee-capsule',
         type: 'tabletop',
         brand: 'illy',
@@ -141,6 +146,7 @@ const products = [
     },
     {
         id: 'coffee-lavazza-blue',
+        relatedProducts: ['coffee-illy-mitaca-smart30', 'coffee-gaggia-cadorna', 'snack-necta-snakky'],
         category: 'coffee-capsule',
         type: 'tabletop',
         brand: 'lavazza',
@@ -171,6 +177,7 @@ const products = [
     // ===== SNACK VENDING =====
     {
         id: 'snack-combo-deluxe',
+        relatedProducts: ['snack-necta-snakky', 'snack-necta-rondo', 'vending-drinks-vendo-682'],
         category: 'vending-snacks',
         type: 'floor-standing',
         brand: 'necta',
@@ -196,10 +203,119 @@ const products = [
             'images/bianchi-bvm-685.jpg'
         ]
     },
+    {
+        id: 'snack-necta-snakky',
+        relatedProducts: ['snack-necta-sfera', 'snack-necta-rondo', 'coffee-necta-brio'],
+        category: 'vending-snacks',
+        type: 'floor-standing',
+        brand: 'necta',
+        name: {
+            en: 'Necta Snakky',
+            gr: 'Necta Snakky'
+        },
+        description: {
+            en: 'Compact and highly flexible snack and drink machine. Best suited for smaller locations with less available floor space.',
+            gr: 'Συμπαγές και εξαιρετικά ευέλικτο μηχάνημα σνακ και ποτών. Ιδανικό για μικρότερους χώρους με περιορισμένο διαθέσιμο χώρο δαπέδου.'
+        },
+        features: {
+            en: ['Compact dimensions', 'Flexible layout', 'Up to 338 products', 'Cans, bottles, and snacks', 'Excellent capacity/size ratio'],
+            gr: ['Συμπαγείς διαστάσεις', 'Ευέλικτη διάταξη', 'Έως 338 προϊόντα', 'Κουτάκια, μπουκάλια και σνακ', 'Εξαιρετική αναλογία χωρητικότητας/μεγέθους']
+        },
+        specifications: {
+            capacity: '338 products',
+            dimensions: '170cm x 70.7cm x 80cm',
+            protocol: 'MDB, Executive'
+        },
+        images: [
+            'images/necta-snakky.jpg'
+        ]
+    },
+    {
+        id: 'snack-necta-sfera',
+        relatedProducts: ['snack-necta-snakky', 'snack-necta-rondo', 'coffee-necta-kikko'],
+        category: 'vending-snacks',
+        type: 'floor-standing',
+        brand: 'necta',
+        name: {
+            en: 'Necta Sfera',
+            gr: 'Necta Sfera'
+        },
+        description: {
+            en: 'Offering protection and service in inside vending. Wide variety of food products, snacks, bottles and cans with excellent capacity to size ratio.',
+            gr: 'Προσφέρει προστασία και εξυπηρέτηση στην πώληση εσωτερικών χώρων. Μεγάλη ποικιλία τροφίμων, σνακ, μπουκαλιών και κουτιών με εξαιρετική αναλογία χωρητικότητας προς μέγεθος.'
+        },
+        features: {
+            en: ['Armored user interface', 'Shatterproof window', 'Metalic numeric keypad', '5 direct selections', 'Good visibility'],
+            gr: ['Θωρακισμένη διεπαφή χρήστη', 'Άθραυστο παράθυρο', 'Μεταλλικό αριθμητικό πληκτρολόγιο', '5 άμεσες επιλογές', 'Καλή ορατότητα']
+        },
+        specifications: {
+            dimensions: '183cm x 88cm x 89cm',
+            glass: 'Shatterproof'
+        },
+        images: [
+            'images/necta-sfera.jpg'
+        ]
+    },
+    {
+        id: 'snack-necta-rondo',
+        relatedProducts: ['snack-necta-snakky', 'snack-combo-deluxe', 'vending-drinks-dixie-501e'],
+        category: 'vending-snacks',
+        type: 'floor-standing',
+        brand: 'necta',
+        name: {
+            en: 'Necta Rondo',
+            gr: 'Necta Rondo'
+        },
+        description: {
+            en: 'Simple yet elegant snack and drink vending solution. Able to stock up to 40 different products with five direct selection buttons.',
+            gr: 'Απλή αλλά κομψή λύση αυτόματης πώλησης σνακ και ποτών. Δυνατότητα αποθήκευσης έως και 40 διαφορετικών προϊόντων με πέντε κουμπιά άμεσης επιλογής.'
+        },
+        features: {
+            en: ['Up to 40 products', '5 direct selections', 'Automatic setup', 'Bi-zone temperature', 'Photocells'],
+            gr: ['Έως 40 προϊόντα', '5 άμεσες επιλογές', 'Αυτόματη ρύθμιση', 'Θερμοκρασία διπλής ζώνης', 'Φωτοκύτταρα']
+        },
+        specifications: {
+            capacity: 'Up to 48 selections',
+            dimensions: '183cm x 88cm x 89cm',
+            weight: '225 kg',
+            energy: 'A Rating'
+        },
+        images: [
+            'images/necta-rondo.png'
+        ]
+    },
+    {
+        id: 'snack-sielaff-fs2020',
+        relatedProducts: ['snack-combo-deluxe', 'snack-necta-sfera', 'coffee-fas-400'],
+        category: 'vending-snacks',
+        type: 'floor-standing',
+        brand: 'Sielaff',
+        name: {
+            en: 'Sielaff FS 2020',
+            gr: 'Sielaff FS 2020'
+        },
+        description: {
+            en: 'A robust and reliable spiral vending machine acting as a 24/7 shop. Flexible configuration for snacks, confectionery, cans and bottles.',
+            gr: 'Μια στιβαρή και αξιόπιστη μηχανή αυτόματης πώλησης με σπιράλ που λειτουργεί ως κατάστημα 24/7. Ευέλικτη διαμόρφωση για σνακ, ζαχαρώδη, κουτάκια και μπουκάλια.'
+        },
+        features: {
+            en: ['Stainless steel panels', 'Secure locking system', 'Energy saving mode', 'High capacity', 'Spiral delivery'],
+            gr: ['Πάνελ από ανοξείδωτο χάλυβα', 'Ασφαλές σύστημα κλειδώματος', 'Λειτουργία εξοικονόμησης ενέργειας', 'Υψηλή χωρητικότητα', 'Παράδοση με σπιράλ']
+        },
+        specifications: {
+            dimensions: '183cm x 99cm x 88cm',
+            weight: '475 kg',
+            power: '410 W'
+        },
+        images: [
+            'images/sielaff-fs2020.png'
+        ]
+    },
 
     // ===== WATER SOLUTIONS =====
     {
         id: 'water-dispenser-pro',
+        relatedProducts: ['water-vikos-500ml', 'water-vikos-10lt', 'water-cooler-yl1674t'],
         category: 'water-dispensers',
         type: 'floor-standing',
         brand: 'Premium',
@@ -227,6 +343,7 @@ const products = [
     },
     {
         id: 'water-vikos-500ml',
+        relatedProducts: ['water-vikos-10lt', 'water-dispenser-pro', 'water-cooler-yl1674t'],
         category: 'water-dispensers',
         type: 'bottle',
         brand: 'Vikos',
@@ -254,6 +371,7 @@ const products = [
     },
     {
         id: 'water-vikos-10lt',
+        relatedProducts: ['water-vikos-500ml', 'water-dispenser-pro', 'water-cooler-yl1674t'],
         category: 'water-dispensers',
         type: 'bottle',
         brand: 'Vikos',
@@ -281,6 +399,7 @@ const products = [
     // ===== NEW PRODUCTS FROM NEWIMG =====
     {
         id: 'vending-drinks-dixie-501e',
+        relatedProducts: ['vending-drinks-vendo-682', 'snack-combo-deluxe', 'snack-sielaff-fs2020'],
         category: 'vending-drinks',
         type: 'floor-standing',
         brand: 'Dixie Narco',
@@ -308,6 +427,7 @@ const products = [
     },
     {
         id: 'vending-drinks-vendo-682',
+        relatedProducts: ['vending-drinks-dixie-501e', 'snack-combo-deluxe', 'snack-necta-sfera'],
         category: 'vending-drinks',
         type: 'floor-standing',
         brand: 'Sanden Vendo',
@@ -334,6 +454,7 @@ const products = [
     },
     {
         id: 'coffee-gaggia-cadorna',
+        relatedProducts: ['coffee-illy-mitaca-smart30', 'coffee-lavazza-blue', 'coffee-bianchi-bvm333'],
         category: 'coffee-capsule',
         type: 'tabletop',
         brand: 'Gaggia',
@@ -361,6 +482,7 @@ const products = [
     },
     {
         id: 'coffee-bianchi-bvm333',
+        relatedProducts: ['coffee-gaggia-cadorna', 'coffee-necta-brio', 'coffee-lavazza-blue'],
         category: 'coffee-capsule',
         type: 'floor-standing',
         brand: 'Bianchi',
@@ -387,6 +509,7 @@ const products = [
     },
     {
         id: 'water-cooler-yl1674t',
+        relatedProducts: ['water-dispenser-pro', 'water-vikos-500ml', 'water-vikos-10lt'],
         category: 'water-dispensers',
         type: 'tabletop',
         brand: 'Premium',

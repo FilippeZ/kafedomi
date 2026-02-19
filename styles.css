@@ -5891,71 +5891,163 @@ table {
 }
 
 /* Combined Responsive Design */
-@media (max-width: 992px) {
-    .cta__wrapper {
-        padding: 4.5rem 3rem;
-    }
-}
-
-@media (max-width: 768px) {
+/* Combined Responsive Design - Mobile & Tablet */
+/* Professional Mobile Overhaul - Optimized for Usability & Premium Feel */
+@media (max-width: 1024px) {
     .cta {
-        padding: 6rem 0;
+        padding: 4rem 0;
+        background: #1a0f0a;
+        /* Ensure solid background for edge-to-edge feel */
     }
 
     .cta__wrapper {
-        padding: 4rem 2rem;
-        border-radius: 35px;
-        margin: 0 1rem;
+        padding: 3rem 1.5rem !important;
+        /* V5: Restored standard padding (Clean Layout) */
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    .cta__header {
+        margin-bottom: 3.5rem !important;
+        padding-bottom: 2rem !important;
+        text-align: left !important;
+        padding-left: 0.5rem !important;
+        /* Slight align with inputs */
     }
 
     .cta__title {
-        font-size: 2.2rem;
+        font-size: 2rem !important;
+        text-align: left !important;
+    }
+
+    .cta__subtitle {
+        font-size: 1.1rem !important;
+        text-align: left !important;
+        margin: 0 !important;
     }
 
     .cta__form-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 2.2rem !important;
+    }
+
+    .cta__form .form-group {
+        align-items: stretch !important;
+        text-align: left !important;
+        width: 100% !important;
     }
 
     .cta__form .form-group label {
         font-size: 1.1rem !important;
-        margin-bottom: 1rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 0.8rem !important;
+        text-align: left !important;
+        width: 100% !important;
+        display: block !important;
+        color: #c08240 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        transform: none !important;
+    }
+
+    .input-group {
+        width: 100% !important;
+        position: relative !important;
     }
 
     .cta__form .form-group input,
     .cta__form .form-group select,
     .cta__form .form-group textarea {
-        padding: 1.3rem 1.3rem 1.3rem 3.8rem !important;
-        font-size: 16px;
+        height: 4.5rem !important;
+        /* V3: Increased height */
+        padding: 0 1.5rem 0 3.2rem !important;
+        /* V3: Reduced left padding (text closer to start) */
+        font-size: 1.2rem !important;
+        /* V3: Larger font */
+        background: rgba(255, 255, 255, 0.05) !important;
+        /* V4: More subtle background */
+        backdrop-filter: blur(10px) !important;
+        /* V4: Glassmorphism */
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 2px solid rgba(192, 130, 64, 0.2) !important;
+        border-radius: 16px !important;
+        /* V4: Softer corners */
+        color: #fff !important;
+        width: 100% !important;
+        display: block !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .cta__form .form-group input:focus,
+    .cta__form .form-group select:focus,
+    .cta__form .form-group textarea:focus {
+        border-color: #c08240 !important;
+        box-shadow: 0 0 15px rgba(192, 130, 64, 0.3) !important;
+        /* V4: Gold glow */
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .cta__form .form-group textarea {
+        height: auto !important;
+        min-height: 180px !important;
+        padding-top: 1.5rem !important;
+    }
+
+    .input-icon {
+        left: 1rem !important;
+        /* V3: Icon closer to edge */
+        width: 24px !important;
+        height: 24px !important;
+        top: 2.25rem !important;
+        /* Centered in 4.5rem */
+        transform: translateY(-50%) !important;
+    }
+
+    .cta__form .form-group textarea~.input-icon {
+        top: 2.5rem !important;
     }
 
     .cta__submit {
-        padding: 1.5rem 2.5rem;
-        margin-top: 3rem;
-        font-size: 1.15rem;
+        height: 4.5rem !important;
+        padding: 0 1.5rem !important;
+        /* Ensure padding doesn't squash text */
+        margin-top: 2.5rem !important;
+        font-size: 1.1rem !important;
+        /* Reduced from 1.3rem for fit */
+        letter-spacing: 1px !important;
+        /* Reduced from 3px for compact fit */
+        font-weight: 800 !important;
+        border-radius: 50px !important;
+        /* V4: Pill shape */
+        width: 100% !important;
+        /* V5: Flexbox for perfect centering (Definitive Polish) */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.8rem !important;
+        /* Slightly reduced gap */
+        /* V4: Richer Gradient */
+        background: linear-gradient(135deg, #d4a056 0%, #8b5a2b 100%) !important;
+        box-shadow: 0 10px 30px rgba(160, 109, 53, 0.5) !important;
+        text-transform: uppercase !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        white-space: nowrap !important;
+        /* Prevent wrapping */
     }
 }
 
+/* Specific Tweak for very small screens */
 @media (max-width: 480px) {
-    .cta__wrapper {
-        padding: 3.5rem 1.5rem;
-        margin: 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
-
-    .cta__header {
-        margin-bottom: 3rem;
-    }
-
     .cta__title {
-        font-size: 1.95rem;
+        font-size: 1.8rem !important;
     }
 
-    .cta__submit {
-        font-size: 1.05rem;
-        letter-spacing: 1.5px;
+    .cta__wrapper {
+        padding: 2.5rem 1rem !important;
     }
 }
 
