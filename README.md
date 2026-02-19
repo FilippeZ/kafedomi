@@ -79,7 +79,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
-RECIPIENT_EMAIL=info@kafedomi.gr
+RECIPIENT_EMAIL=kafedomi@gmail.com
 ```
 
 **For Gmail:**
@@ -122,7 +122,7 @@ The server will start on `http://localhost:3000`
 4. Click "Request Quote"
 5. You should receive:
    - Success message on the website
-   - Email notification to `RECIPIENT_EMAIL`
+   - Email notification to `RECIPIENT_EMAIL` (kafedomi@gmail.com)
    - Auto-reply email to the customer
 
 ### Language Switching
@@ -232,7 +232,7 @@ GET /api/health
 - **Region**: Fthiotida, Greece
 - **Coverage**: Serving all of Fthiotida region (Εξυπηρετούμε όλο το νομό Φθιώτιδας)
 - **Phone**: +30 22310 12345
-- **Email**: info@kafedomi.gr
+- **Email**: kafedomi@gmail.com
 
 ---
 
@@ -361,7 +361,7 @@ Edit CSS variables in `styles.css`:
 ## 📞 Support
 
 For questions or issues:
-- **Email**: info@kafedomi.gr
+- **Email**: kafedomi@gmail.com
 - **Phone**: +30 22310 12345
 - **Location**: Lamia, Fthiotida, Greece
 

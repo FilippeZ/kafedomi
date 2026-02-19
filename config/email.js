@@ -207,7 +207,7 @@ const emailTemplates = {
                         <p><strong>Contact Information:</strong><br>
                         📍 Lamia, Fthiotida, Greece<br>
                         📞 +30 22310 51340<br>
-                        ✉️ info@kafedomi.gr</p>
+                        ✉️ kafedomi@gmail.com</p>
                     </div>
                     <div class="footer">
                         <p>© 2026 Kafedomi. All rights reserved.<br>
@@ -253,7 +253,7 @@ const emailTemplates = {
                         <p><strong>Στοιχεία Επικοινωνίας:</strong><br>
                         📍 Λαμία, Φθιώτιδα, Ελλάδα<br>
                         📞 +30 22310 51340<br>
-                        ✉️ info@kafedomi.gr</p>
+                        ✉️ kafedomi@gmail.com</p>
                     </div>
                     <div class="footer">
                         <p>© 2026 Kafedomi. Με επιφύλαξη παντός δικαιώματος.<br>
